@@ -1,6 +1,6 @@
 # tinytuis
 
-tiny, useful terminal interfaces — built to learn, share, and reuse.
+tiny, useful terminal interfaces - built to learn, share, and reuse.
 
 ## overview
 
@@ -11,9 +11,6 @@ patterns that repeat are extracted into `/patterns`.
 ## layout
 
 - `/experiments` — small tui programs
-- `/patterns` — reusable components 
-- `/docs` — notes and learnings
-- `/site` — project website
 
 ## principles
 
