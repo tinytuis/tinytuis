@@ -13,8 +13,12 @@ def demo_themes():
         print(term.clear)
         colors = get_theme_colors(theme)
         
-        print(term.move_y(1) + term.center(f"TTYKit Theme: {theme.upper()}"))
-        print(term.move_y(3) + term.center("All components automatically adapt to the theme"))
+        if theme == "functional":
+            print(term.move_y(1) + term.center(f"TTYKit Theme: FUNCTIONAL"))
+            print(term.move_y(3) + term.center("Clean, purposeful design focused on usability"))
+        else:
+            print(term.move_y(1) + term.center(f"TTYKit Theme: {theme.upper()}"))
+            print(term.move_y(3) + term.center("All components automatically adapt to the theme"))
         
         # Show theme colors
         print(term.move_xy(10, 5) + f"{colors['text_primary']}Primary Text{term.normal}")
@@ -25,21 +29,26 @@ def demo_themes():
         print(term.move_xy(10, 10) + f"{colors['error']}Error{term.normal}")
         
         # Show components with this theme
-        render_button("Sample Button", 30, 5, selected=True, theme=theme)
-        render_progress_bar(0.7, 20, 30, 7, theme=theme)
-        render_modal("Theme Preview", 30, theme=theme, title="Modal")
+        style = "functional" if theme == "functional" else "default"
+        render_button("Sample Button", 30, 5, selected=True, theme=theme, style=style)
+        render_progress_bar(0.7, 20, 30, 7, theme=theme, style=style)
+        render_modal("Theme Preview", 30, theme=theme, style=style, title="Modal")
         
         print(term.move_y(term.height - 3) + term.center(f"Theme: {theme} | Press any key for next theme..."))
         term.inkey()
 
 def demo_button_styles():
-    """Demo all button styles."""
-    styles = ["default", "rounded", "minimal", "boxed"]
+    """Demo all button styles including functional."""
+    styles = ["default", "rounded", "minimal", "boxed", "functional"]
     
     for style in styles:
         print(term.clear)
-        print(term.move_y(1) + term.center(f"TTYKit Button Styles: {style.upper()}"))
-        print(term.move_y(3) + term.center("Press UP/DOWN to see selected state"))
+        if style == "functional":
+            print(term.move_y(1) + term.center(f"TTYKit Button Style: FUNCTIONAL"))
+            print(term.move_y(3) + term.center("Clean design focused on usability over decoration"))
+        else:
+            print(term.move_y(1) + term.center(f"TTYKit Button Styles: {style.upper()}"))
+            print(term.move_y(3) + term.center("Press UP/DOWN to see selected state"))
         
         selected = False
         while True:
@@ -49,10 +58,11 @@ def demo_button_styles():
             
             print(term.move_xy(10, 6) + f"Style: {style}")
             print(term.move_xy(10, 8) + "Normal:")
-            render_button("Save File", 20, 8, selected=False, style=style)
+            theme = "functional" if style == "functional" else "gruvbox_light"
+            render_button("Save File", 20, 8, selected=False, theme=theme, style=style)
             
             print(term.move_xy(10, 12) + "Selected:")
-            render_button("Save File", 20, 12, selected=True, style=style)
+            render_button("Save File", 20, 12, selected=True, theme=theme, style=style)
             
             print(term.move_xy(10, 16) + f"Current: {'SELECTED' if selected else 'NORMAL'}")
             print(term.move_xy(10, 18) + "UP/DOWN to toggle, ENTER for next style")
@@ -66,13 +76,17 @@ def demo_button_styles():
                 return
 
 def demo_progress_styles():
-    """Demo all progress bar styles."""
-    styles = ["default", "blocks", "dots", "arrows"]
+    """Demo all progress bar styles including functional."""
+    styles = ["default", "blocks", "dots", "arrows", "functional"]
     
     for style in styles:
         print(term.clear)
-        print(term.move_y(1) + term.center(f"TTYKit Progress Styles: {style.upper()}"))
-        print(term.move_y(3) + term.center("Watch the animated progress bars"))
+        if style == "functional":
+            print(term.move_y(1) + term.center(f"TTYKit Progress Style: FUNCTIONAL"))
+            print(term.move_y(3) + term.center("Minimal visual noise, maximum clarity"))
+        else:
+            print(term.move_y(1) + term.center(f"TTYKit Progress Styles: {style.upper()}"))
+            print(term.move_y(3) + term.center("Watch the animated progress bars"))
         
         for i in range(101):
             progress = i / 100.0
@@ -82,8 +96,9 @@ def demo_progress_styles():
                 print(term.move_xy(0, line) + " " * term.width)
             
             print(term.move_xy(10, 6) + f"Style: {style}")
-            render_progress_bar(progress, 30, 10, 8, style=style, label="Download")
-            render_progress_bar(progress * 0.7, 30, 10, 10, style=style, label="Install")
+            theme = "functional" if style == "functional" else "gruvbox_light"
+            render_progress_bar(progress, 30, 10, 8, theme=theme, style=style, label="Download")
+            render_progress_bar(progress * 0.7, 30, 10, 10, theme=theme, style=style, label="Install")
             
             time.sleep(0.02)
         
@@ -91,12 +106,16 @@ def demo_progress_styles():
         term.inkey()
 
 def demo_modal_styles():
-    """Demo all modal styles."""
-    styles = ["default", "double", "rounded"]
+    """Demo all modal styles including functional."""
+    styles = ["default", "double", "rounded", "functional"]
     
     for style in styles:
         print(term.clear)
-        print(term.move_y(1) + term.center(f"TTYKit Modal Styles: {style.upper()}"))
+        if style == "functional":
+            print(term.move_y(1) + term.center(f"TTYKit Modal Style: FUNCTIONAL"))
+            print(term.move_y(3) + term.center("No borders, pure content focus"))
+        else:
+            print(term.move_y(1) + term.center(f"TTYKit Modal Styles: {style.upper()}"))
         
         modals = [
             ("Simple Modal", "This is a basic modal dialog"),
@@ -106,25 +125,33 @@ def demo_modal_styles():
         
         for title, content in modals:
             print(term.clear)
-            print(term.move_y(1) + term.center(f"Modal Style: {style.upper()}"))
-            
-            if title == "Simple Modal":
-                render_modal(content, 40, style=style)
+            if style == "functional":
+                print(term.move_y(1) + term.center(f"Modal Style: FUNCTIONAL - Clean content presentation"))
             else:
-                render_modal(content, 50, style=style, title=title)
+                print(term.move_y(1) + term.center(f"Modal Style: {style.upper()}"))
+            
+            theme = "functional" if style == "functional" else "gruvbox_light"
+            if title == "Simple Modal":
+                render_modal(content, 40, theme=theme, style=style)
+            else:
+                render_modal(content, 50, theme=theme, style=style, title=title)
             
             print(term.move_y(term.height - 3) + term.center("Press any key for next modal..."))
             term.inkey()
 
 def demo_lists():
-    """Demo list components."""
-    styles = ["default", "arrows", "bullets", "numbers"]
+    """Demo list components including functional."""
+    styles = ["default", "arrows", "bullets", "numbers", "functional"]
     items = ["New File", "Open File", "Save File", "Save As...", "Exit"]
     
     for style in styles:
         print(term.clear)
-        print(term.move_y(1) + term.center(f"TTYKit List Styles: {style.upper()}"))
-        print(term.move_y(3) + term.center("Use UP/DOWN arrows to navigate"))
+        if style == "functional":
+            print(term.move_y(1) + term.center(f"TTYKit List Style: FUNCTIONAL"))
+            print(term.move_y(3) + term.center("Selection through contrast, not decoration"))
+        else:
+            print(term.move_y(1) + term.center(f"TTYKit List Styles: {style.upper()}"))
+            print(term.move_y(3) + term.center("Use UP/DOWN arrows to navigate"))
         
         selected = 0
         while True:
@@ -133,7 +160,8 @@ def demo_lists():
                 print(term.move_xy(0, line) + " " * term.width)
             
             print(term.move_xy(10, 6) + f"File Menu (Style: {style}):")
-            render_list(items, 10, 8, selected, style=style)
+            theme = "functional" if style == "functional" else "gruvbox_light"
+            render_list(items, 10, 8, selected, theme=theme, style=style)
             
             print(term.move_xy(10, 15) + "UP/DOWN to navigate, ENTER for next style")
             
@@ -148,8 +176,8 @@ def demo_lists():
                 return
 
 def demo_tables():
-    """Demo table components."""
-    styles = ["default", "minimal"]
+    """Demo table components including functional."""
+    styles = ["default", "minimal", "functional"]
     headers = ["Name", "Size", "Modified"]
     rows = [
         ["document.txt", "2.4 KB", "2024-01-15"],
@@ -160,10 +188,15 @@ def demo_tables():
     
     for style in styles:
         print(term.clear)
-        print(term.move_y(1) + term.center(f"TTYKit Table Styles: {style.upper()}"))
-        print(term.move_y(3) + term.center("File listing example"))
+        if style == "functional":
+            print(term.move_y(1) + term.center(f"TTYKit Table Style: FUNCTIONAL"))
+            print(term.move_y(3) + term.center("No borders, pure data alignment"))
+        else:
+            print(term.move_y(1) + term.center(f"TTYKit Table Styles: {style.upper()}"))
+            print(term.move_y(3) + term.center("File listing example"))
         
-        render_table(headers, rows, 10, 6, style=style)
+        theme = "functional" if style == "functional" else "gruvbox_light"
+        render_table(headers, rows, 10, 6, theme=theme, style=style)
         
         print(term.move_y(term.height - 3) + term.center("Press any key for next style..."))
         term.inkey()
@@ -189,38 +222,41 @@ def demo_status_bars():
         term.inkey()
 
 def demo_customization():
-    """Demo how to customize TTYKit."""
+    """Demo how to customize TTYKit with clean design principles."""
     print(term.clear)
     print(term.move_y(2) + term.center("TTYKit Customization Guide"))
-    print(term.move_y(4) + term.center("How to modify styling and create new patterns"))
+    print(term.move_y(4) + term.center("How to create clean, functional TUI designs"))
     
     customization_info = [
-        "1. THEMES - Modify colors in themes.py:",
-        "   • Add new themes to THEMES dictionary",
-        "   • Define colors for each component role",
-        "   • Use blessed Terminal color methods",
+        "CLEAN DESIGN PRINCIPLES FOR TTYKIT:",
         "",
-        "2. COMPONENT STYLES - Add new styles:",
-        "   • Modify render functions in components.py",
-        "   • Add new style parameters",
-        "   • Create custom visual patterns",
+        "1. REMOVE DECORATION - Use 'functional' style for pure usability",
+        "   render_button('Save', style='functional', theme='functional')",
         "",
-        "3. NEW COMPONENTS - Create new UI elements:",
-        "   • Follow the render_* function pattern",
-        "   • Accept theme and style parameters",
-        "   • Use get_theme_colors() for consistency",
+        "2. CONTRAST OVER ORNAMENTATION - Selection through inversion",
+        "   Selected items use inverted colors, not arrows/bullets",
         "",
-        "4. USAGE EXAMPLES:",
-        "   render_button('Save', theme='cyberpunk', style='rounded')",
-        "   render_modal('Alert', theme='minimal', style='double')",
-        "   render_progress_bar(0.5, theme='solarized_dark', style='blocks')"
+        "3. CONTENT HIERARCHY - Information, not decoration",
+        "   Status through text content: 'SUCCESS: File saved'",
+        "",
+        "4. CONSISTENT SPACING - Grid-based alignment",
+        "   All components respect consistent spacing rules",
+        "",
+        "5. PURPOSEFUL COLOR - Color only when functional",
+        "   'functional' theme uses only essential colors",
+        "",
+        "Focus on usability and clarity over visual complexity."
     ]
     
     for i, line in enumerate(customization_info):
-        if line.startswith(("1.", "2.", "3.", "4.")):
+        if line.startswith(("1.", "2.", "3.", "4.", "5.")):
             print(term.move_xy(5, 6 + i) + term.orange + line + term.normal)
         elif line.startswith("   render_"):
             print(term.move_xy(5, 6 + i) + term.cyan + line + term.normal)
+        elif line.startswith("Focus on"):
+            print(term.move_xy(5, 6 + i) + term.white + line + term.normal)
+        elif line.startswith("CLEAN DESIGN"):
+            print(term.move_xy(5, 6 + i) + term.bold + term.white + line + term.normal)
         else:
             print(term.move_xy(5, 6 + i) + line)
     
@@ -228,17 +264,17 @@ def demo_customization():
     term.inkey()
 
 def main():
-    """Comprehensive TTYKit demo showcasing all patterns and customization."""
+    """Comprehensive TTYKit demo showcasing all patterns including functional design."""
     with term.fullscreen(), term.cbreak():
         print(term.clear)
         print(term.move_y(3) + term.center("TTYKit - Complete Pattern Library"))
         print(term.move_y(5) + term.center("A comprehensive TUI UI kit for designer-friendly terminals"))
-        print(term.move_y(7) + term.center("This demo showcases:"))
-        print(term.move_y(9) + term.center("• 4 Built-in Themes (gruvbox_light, solarized_dark, cyberpunk, minimal)"))
-        print(term.move_y(10) + term.center("• Multiple Component Styles (buttons, modals, progress bars)"))
+        print(term.move_y(7) + term.center("Featuring clean, functional design:"))
+        print(term.move_y(9) + term.center("• 5 Built-in Themes (including 'functional')"))
+        print(term.move_y(10) + term.center("• Multiple Component Styles (including clean variants)"))
         print(term.move_y(11) + term.center("• Advanced Components (lists, tables, status bars)"))
-        print(term.move_y(12) + term.center("• Complete Customization Guide"))
-        print(term.move_y(14) + term.center("Ready to explore the full breadth of TTYKit?"))
+        print(term.move_y(12) + term.center("• Focus on usability and clarity"))
+        print(term.move_y(14) + term.center("Ready to explore functional beauty?"))
         print(term.move_y(16) + term.center("Press any key to start..."))
         term.inkey()
         
@@ -256,11 +292,11 @@ def main():
         print(term.clear)
         print(term.move_y(6) + term.center("TTYKit Complete Demo Finished!"))
         print(term.move_y(8) + term.center("You've seen the full breadth of TTYKit:"))
-        print(term.move_y(10) + term.center("✓ 4 Themes with full color customization"))
+        print(term.move_y(10) + term.center("✓ 5 Themes including clean functional design"))
         print(term.move_y(11) + term.center("✓ 6 Component types with multiple styles each"))
         print(term.move_y(12) + term.center("✓ Advanced UI patterns (lists, tables, status bars)"))
-        print(term.move_y(13) + term.center("✓ Complete customization and extension guide"))
-        print(term.move_y(15) + term.center("TTYKit: Making Linux terminals beautiful and accessible!"))
+        print(term.move_y(13) + term.center("✓ Focus on usability and clarity"))
+        print(term.move_y(15) + term.center("TTYKit: Form follows function in terminal interfaces!"))
         print(term.move_y(17) + term.center("Press any key to exit..."))
         term.inkey()
 

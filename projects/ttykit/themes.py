@@ -47,6 +47,22 @@ THEMES = {
         "warning": term.yellow,
         "error": term.red
     },
+    "functional": {
+        # Clean, functional design - monochrome with single accent for clarity
+        "button_text": term.white_on_black,
+        "button_selected": term.black_on_white,  # High contrast inversion
+        "button_border": term.white,
+        "modal_border": term.white,
+        "modal_background": term.white_on_black,
+        "progress_fill": term.white,
+        "progress_empty": term.darkgray,
+        "text_primary": term.white,
+        "text_secondary": term.darkgray,
+        "accent": term.white,  # No decoration, pure function
+        "success": term.white,  # Status through text, not color
+        "warning": term.white,
+        "error": term.white
+    },
     "minimal": {
         "button_text": term.white_on_black,
         "button_selected": term.bold + term.white,

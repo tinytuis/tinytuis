@@ -7,7 +7,13 @@ def render_button(text: str, x: int = 0, y: int = 0, selected: bool = False, the
     """Render a styled button at (x,y) with customizable themes and styles."""
     colors = get_theme_colors(theme)
     
-    if style == "rounded":
+    if style == "functional":
+        # Functional style: Pure function, no decoration
+        if selected:
+            button = f"{colors['button_selected']} {text} {term.normal}"  # Inverted, no brackets
+        else:
+            button = f"{colors['button_text']} {text} {term.normal}"  # Clean text only
+    elif style == "rounded":
         # Rounded button style
         if selected:
             button = f"{colors['button_selected']}( {text} ){colors['accent']}◄{term.normal}"
@@ -55,6 +61,21 @@ def render_modal(content: str, width: int = 40, theme: str = "gruvbox_light", st
     center_x = (term.width - box_width) // 2
     center_y = (term.height - len(lines) - (4 if title else 2)) // 2
     
+    if style == "functional":
+        # Functional style: No borders, just content with spacing
+        if title:
+            with term.location(center_x, center_y):
+                print(f"{colors['accent']}{title.center(box_width)}{term.normal}")
+            content_start = center_y + 2
+        else:
+            content_start = center_y
+        
+        # Content lines with minimal formatting
+        for i, line in enumerate(lines):
+            with term.location(center_x, content_start + i):
+                print(f"{colors['text_primary']}{line.center(box_width)}{term.normal}")
+        return
+    
     if style == "double":
         # Double-line border
         top_char, bottom_char, side_char = "╔╗", "╚╝", "║"
@@ -101,6 +122,16 @@ def render_progress_bar(progress: float = 0.5, width: int = 20, x: int = 0, y: i
     filled = int(progress * width)
     percent = int(progress * 100)
     
+    if style == "functional":
+        # Functional style: Pure function, minimal visual noise
+        bar = f"{colors['progress_fill']}{'█' * filled}{colors['progress_empty']}{'·' * (width - filled)}{term.normal}"
+        with term.location(x, y):
+            if label:
+                print(f"{colors['text_primary']}{label} {bar} {percent}%{term.normal}")
+            else:
+                print(f"{bar} {percent}%")
+        return
+    
     if style == "blocks":
         # Block-style progress bar
         bar = f"{colors['progress_fill']}{'█' * filled}{colors['progress_empty']}{'░' * (width - filled)}{term.normal}"
@@ -127,7 +158,11 @@ def render_list(items: list, x: int = 0, y: int = 0, selected: int = 0, theme: s
     for i, item in enumerate(items):
         is_selected = (i == selected)
         
-        if style == "arrows":
+        if style == "functional":
+            # Functional style: No decoration, just inversion for selection
+            item_color = colors['button_selected'] if is_selected else colors['text_primary']
+            prefix = ""
+        elif style == "arrows":
             prefix = f"{colors['accent']}► {term.normal}" if is_selected else "  "
         elif style == "bullets":
             prefix = f"{colors['accent']}• {term.normal}" if is_selected else "  "
@@ -137,7 +172,8 @@ def render_list(items: list, x: int = 0, y: int = 0, selected: int = 0, theme: s
             # Default style
             prefix = f"{colors['accent']}> {term.normal}" if is_selected else "  "
         
-        item_color = colors['button_selected'] if is_selected else colors['text_primary']
+        if style != "functional":
+            item_color = colors['button_selected'] if is_selected else colors['text_primary']
         
         with term.location(x, y + i):
             print(f"{prefix}{item_color}{item}{term.normal}")
@@ -155,6 +191,23 @@ def render_table(headers: list, rows: list, x: int = 0, y: int = 0, theme: str =
     
     # Add padding
     col_widths = [w + 2 for w in col_widths]
+    
+    if style == "functional":
+        # Functional style: No borders, just aligned columns
+        with term.location(x, y):
+            header_line = " ".join(f"{colors['accent']}{header.ljust(col_widths[i])}{term.normal}" for i, header in enumerate(headers))
+            print(header_line)
+        
+        # Subtle separator line
+        with term.location(x, y + 1):
+            separator = " ".join(f"{colors['text_secondary']}{'─' * col_widths[i]}{term.normal}" for i in range(len(headers)))
+            print(separator)
+        
+        for i, row in enumerate(rows):
+            with term.location(x, y + i + 2):
+                row_line = " ".join(f"{colors['text_primary']}{str(cell).ljust(col_widths[j])}{term.normal}" for j, cell in enumerate(row))
+                print(row_line)
+        return
     
     if style == "minimal":
         # Minimal table style
@@ -207,14 +260,20 @@ def render_status_bar(text: str, status: str = "info", theme: str = "gruvbox_lig
     """Render a status bar at the bottom of the screen."""
     colors = get_theme_colors(theme)
     
-    if status == "success":
-        bg_color = colors['success']
-    elif status == "warning":
-        bg_color = colors['warning']
-    elif status == "error":
-        bg_color = colors['error']
+    if theme == "functional":
+        # Functional style: Status through text content, not color
+        bg_color = colors['text_primary']
+        if status in ["success", "warning", "error"]:
+            text = f"{status.upper()}: {text}"  # Explicit status in text
     else:
-        bg_color = colors['accent']
+        if status == "success":
+            bg_color = colors['success']
+        elif status == "warning":
+            bg_color = colors['warning']
+        elif status == "error":
+            bg_color = colors['error']
+        else:
+            bg_color = colors['accent']
     
     with term.location(0, term.height - 1):
         status_line = f"{bg_color}{text.ljust(term.width)}{term.normal}"
