@@ -8,15 +8,6 @@ def render_button(text: str, x: int = 0, y: int = 0, selected: bool = False) -> 
             print(term.black_on_lightyellow + term.bold + f"[ {text} ]" + term.orange + ">" + term.normal)  # Selected state
         else:
             print(term.black_on_lightyellow + f"[ {text} ]" + term.normal)  # Normal state
-    # Simple nav loop for demo
-    with term.cbreak():  # Enable key input
-        key = term.inkey(timeout=0.1)  # Check for keypress
-        if key.name == "KEY_UP" and selected:
-            selected = False  # Toggle off
-        elif key.name == "KEY_DOWN" and not selected:
-            selected = True  # Toggle on
-        elif key.name in ("q", "KEY_ESCAPE"):
-            return  # Exit on q or Esc
 
 def render_modal(content: str, width: int = 40) -> None:
     """Render a centered modal with gruvbox_light orange border."""
