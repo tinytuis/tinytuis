@@ -1,11 +1,17 @@
 from blessed import Terminal
-from themes import get_theme_colors
+from themes import THEMES
 
 term = Terminal()
 
 def render_button(text: str, x: int = 0, y: int = 0, selected: bool = False, theme: str = "gruvbox_light", style: str = "default") -> None:
     """Render a styled button at (x,y) with customizable themes and styles."""
-    colors = get_theme_colors(theme)
+    if theme not in THEMES:  # Validate theme
+        print(f"Warning: Theme '{theme}' not found, using 'gruvbox_light'")  # Error message
+        theme = "gruvbox_light"  # Default theme
+    colors = THEMES[theme]
+    if style not in ["default", "rounded", "minimal", "boxed", "functional"]:  # Validate style
+        print(f"Warning: Style '{style}' not supported, using 'default'")  # Error message
+        style = "default"  # Default style
     
     if style == "functional":
         # Functional style: Pure function, no decoration
@@ -35,8 +41,7 @@ def render_button(text: str, x: int = 0, y: int = 0, selected: bool = False, the
             button = f"{colors['button_border']}┌{'─' * (len(text) + 2)}┐{term.normal}\n"
             button += f"{colors['button_border']}│{colors['button_text']} {text} {colors['button_border']}│{term.normal}\n"
             button += f"{colors['button_border']}└{'─' * (len(text) + 2)}┘{term.normal}"
-    else:
-        # Default button style
+    else:  # default style
         if selected:
             button = f"{colors['button_text']}[ {text} ]{colors['accent']}>{term.normal}"
         else:
@@ -52,7 +57,13 @@ def render_button(text: str, x: int = 0, y: int = 0, selected: bool = False, the
 
 def render_modal(content: str, width: int = 40, theme: str = "gruvbox_light", style: str = "default", title: str = "") -> None:
     """Render a centered modal with customizable themes and styles."""
-    colors = get_theme_colors(theme)
+    if theme not in THEMES:  # Validate theme
+        print(f"Warning: Theme '{theme}' not found, using 'gruvbox_light'")  # Error message
+        theme = "gruvbox_light"  # Default theme
+    if style not in ["default", "double", "rounded", "functional"]:  # Validate style
+        print(f"Warning: Style '{style}' not supported, using 'default'")  # Error message
+        style = "default"  # Default style
+    colors = THEMES[theme]
     lines = content.split('\n')
     max_content_width = max(len(line) for line in lines) if lines else 0
     box_width = max(width, max_content_width + 4, len(title) + 4 if title else 0)
@@ -118,7 +129,13 @@ def render_modal(content: str, width: int = 40, theme: str = "gruvbox_light", st
 
 def render_progress_bar(progress: float = 0.5, width: int = 20, x: int = 0, y: int = 0, theme: str = "gruvbox_light", style: str = "default", label: str = "") -> None:
     """Render a progress bar with customizable themes and styles."""
-    colors = get_theme_colors(theme)
+    if theme not in THEMES:  # Validate theme
+        print(f"Warning: Theme '{theme}' not found, using 'gruvbox_light'")  # Error message
+        theme = "gruvbox_light"  # Default theme
+    if style not in ["default", "blocks", "dots", "arrows", "functional"]:  # Validate style
+        print(f"Warning: Style '{style}' not supported, using 'default'")  # Error message
+        style = "default"  # Default style
+    colors = THEMES[theme]
     filled = int(progress * width)
     percent = int(progress * 100)
     
@@ -153,7 +170,13 @@ def render_progress_bar(progress: float = 0.5, width: int = 20, x: int = 0, y: i
 
 def render_list(items: list, x: int = 0, y: int = 0, selected: int = 0, theme: str = "gruvbox_light", style: str = "default") -> None:
     """Render a selectable list with customizable themes and styles."""
-    colors = get_theme_colors(theme)
+    if theme not in THEMES:  # Validate theme
+        print(f"Warning: Theme '{theme}' not found, using 'gruvbox_light'")  # Error message
+        theme = "gruvbox_light"  # Default theme
+    if style not in ["default", "arrows", "bullets", "numbers", "functional"]:  # Validate style
+        print(f"Warning: Style '{style}' not supported, using 'default'")  # Error message
+        style = "default"  # Default style
+    colors = THEMES[theme]
     
     for i, item in enumerate(items):
         is_selected = (i == selected)
@@ -180,7 +203,13 @@ def render_list(items: list, x: int = 0, y: int = 0, selected: int = 0, theme: s
 
 def render_table(headers: list, rows: list, x: int = 0, y: int = 0, theme: str = "gruvbox_light", style: str = "default") -> None:
     """Render a table with customizable themes and styles."""
-    colors = get_theme_colors(theme)
+    if theme not in THEMES:  # Validate theme
+        print(f"Warning: Theme '{theme}' not found, using 'gruvbox_light'")  # Error message
+        theme = "gruvbox_light"  # Default theme
+    if style not in ["default", "minimal", "functional"]:  # Validate style
+        print(f"Warning: Style '{style}' not supported, using 'default'")  # Error message
+        style = "default"  # Default style
+    colors = THEMES[theme]
     
     # Calculate column widths
     col_widths = [len(header) for header in headers]
@@ -258,7 +287,10 @@ def render_table(headers: list, rows: list, x: int = 0, y: int = 0, theme: str =
 
 def render_status_bar(text: str, status: str = "info", theme: str = "gruvbox_light") -> None:
     """Render a status bar at the bottom of the screen."""
-    colors = get_theme_colors(theme)
+    if theme not in THEMES:  # Validate theme
+        print(f"Warning: Theme '{theme}' not found, using 'gruvbox_light'")  # Error message
+        theme = "gruvbox_light"  # Default theme
+    colors = THEMES[theme]
     
     if theme == "functional":
         # Functional style: Status through text content, not color

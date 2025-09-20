@@ -1,12 +1,11 @@
 # TTYKit
-
 A comprehensive TUI UI kit designed to make Linux terminals inviting for designers and new users.  
-Pre-styled, customizable components with multiple themes and styles for beautiful terminal interfaces.
-
+Pre-styled, customizable components with multiple themes and styles for beautiful terminal interfaces.  
 **Now featuring clean, functional design focused on usability over decoration**
 
 ## Install
 ```bash
+cd projects/ttykit
 pip install -r requirements.txt
 ```
 
@@ -30,52 +29,58 @@ render_modal("Form follows function", theme="functional", style="functional")
 ### Buttons
 - **Styles**: `default`, `rounded`, `minimal`, `boxed`, `functional`
 - **Features**: Selection states, keyboard navigation, theme integration
+
 ```python
 render_button("Click Me", x=10, y=5, selected=True, theme="gruvbox_light", style="rounded")
-render_button("Save", x=10, y=5, selected=True, theme="functional", style="functional")  # Clean, no decoration
+render_button("Save", x=10, y=5, selected=True, theme="functional", style="functional") # Clean, no decoration
 ```
 
 ### Modals
 - **Styles**: `default`, `double`, `rounded`, `functional`
 - **Features**: Auto-centering, titles, multi-line content, borders
+
 ```python
 render_modal("Content here", width=40, theme="solarized_dark", style="double", title="Dialog")
-render_modal("No decoration, pure content", theme="functional", style="functional")  # No borders
+render_modal("No decoration, pure content", theme="functional", style="functional") # No borders
 ```
 
 ### Progress Bars
 - **Styles**: `default`, `blocks`, `dots`, `arrows`, `functional`
 - **Features**: Percentage display, labels, animations
+
 ```python
 render_progress_bar(0.5, width=30, x=10, y=8, theme="cyberpunk", style="blocks", label="Loading")
-render_progress_bar(0.5, width=30, x=10, y=8, theme="functional", style="functional", label="Progress")  # Minimal noise
+render_progress_bar(0.5, width=30, x=10, y=8, theme="functional", style="functional", label="Progress") # Minimal noise
 ```
 
 ### Lists
 - **Styles**: `default`, `arrows`, `bullets`, `numbers`, `functional`
 - **Features**: Selection highlighting, keyboard navigation
+
 ```python
 items = ["File", "Edit", "View", "Help"]
 render_list(items, x=10, y=5, selected=1, theme="minimal", style="arrows")
-render_list(items, x=10, y=5, selected=1, theme="functional", style="functional")  # Contrast over decoration
+render_list(items, x=10, y=5, selected=1, theme="functional", style="functional") # Contrast over decoration
 ```
 
 ### Tables
 - **Styles**: `default`, `minimal`, `functional`
 - **Features**: Auto-sizing columns, headers, borders
+
 ```python
 headers = ["Name", "Size", "Date"]
 rows = [["file.txt", "2KB", "2024-01-15"]]
 render_table(headers, rows, x=10, y=5, theme="gruvbox_light", style="minimal")
-render_table(headers, rows, x=10, y=5, theme="functional", style="functional")  # No borders, pure alignment
+render_table(headers, rows, x=10, y=5, theme="functional", style="functional") # No borders, pure alignment
 ```
 
 ### Status Bars
 - **Types**: `info`, `success`, `warning`, `error`
 - **Features**: Full-width, bottom positioning, status colors
+
 ```python
 render_status_bar("File saved successfully", status="success", theme="solarized_dark")
-render_status_bar("SUCCESS: File saved", status="success", theme="functional")  # Status in text, not color
+render_status_bar("SUCCESS: File saved", status="success", theme="functional") # Status in text, not color
 ```
 
 ## Themes
@@ -100,7 +105,7 @@ The `functional` theme embodies clean design principles:
 from ttykit.themes import list_themes, get_theme_colors
 
 # List all available themes
-themes = list_themes()  # ['gruvbox_light', 'solarized_dark', 'cyberpunk', 'functional', 'minimal']
+themes = list_themes() # ['gruvbox_light', 'solarized_dark', 'cyberpunk', 'functional', 'minimal']
 
 # Get theme colors for custom components
 colors = get_theme_colors("functional")
@@ -140,10 +145,10 @@ When creating custom components, follow these principles:
 
 ```python
 # Good: Clean, functional
-render_button("Save", theme="functional", style="functional")  # Clean, usable
+render_button("Save", theme="functional", style="functional") # Clean, usable
 
 # Avoid: Over-decorated
-render_button("💾 Save File! ✨", theme="cyberpunk", style="boxed")  # Too much visual noise
+render_button("💾 Save File! ✨", theme="cyberpunk", style="boxed") # Too much visual noise
 ```
 
 ### Adding Component Styles
@@ -186,38 +191,7 @@ The demo showcases:
 - Complete customization guide
 - Clean design principles
 
-## Examples
-
-### Functional File Manager
-```python
-# Clean, usable interface focused on clarity
-render_status_bar("File Manager", "info", "functional")
-
-# No decoration, pure function
-files = ["document.txt", "image.png", "script.py"]
-render_list(files, 5, 3, selected=1, theme="functional", style="functional")
-
-# Minimal buttons - function over form
-render_button("Open", 5, 8, theme="functional", style="functional")
-render_button("Delete", 15, 8, theme="functional", style="functional")
-
-# Progress without visual noise
-render_progress_bar(0.6, 25, 5, 10, theme="functional", style="functional", label="Copying")
-```
-
-### Traditional Styled Interface
-```python
-# More decorative for users who prefer visual richness
-render_status_bar("File Manager v1.0", "info", "gruvbox_light")
-
-files = ["document.txt", "image.png", "script.py"]
-render_list(files, 5, 3, selected=1, theme="gruvbox_light", style="arrows")
-
-render_button("Open", 5, 8, theme="gruvbox_light", style="boxed")
-render_button("Delete", 15, 8, theme="gruvbox_light", style="boxed")
-
-render_progress_bar(0.6, 25, 5, 10, theme="gruvbox_light", style="blocks", label="Copying")
-```
+[Insert GIF link here]
 
 ## Goal
 Design pre-styled TUI components to make Linux terminals appealing and accessible for designers, with comprehensive theming and customization options. Features both decorative and functional design approaches to suit different preferences and use cases.
