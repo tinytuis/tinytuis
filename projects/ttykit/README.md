@@ -1,7 +1,7 @@
 # TTYKit
 
-A tiny UI kit for the terminal.  
-Reusable primitives (buttons, modals, progress bars) with switchable themes.
+A TUI UI kit designed to make Linux terminals inviting for designers and new users.  
+Pre-styled primitives (buttons, modals, progress bars) with switchable themes.
 
 ## Install
 ```bash
@@ -25,8 +25,8 @@ render_button("Click me", 5, 2, selected=True, style=style("button_text"))
 
 ## Themes
 
-- **solarized_dark**: Dark with green accents.
-- **gruvbox_light**: Light with orange accents.
+- **gruvbox_light**: Default light theme with orange accents.
+- **solarized_dark**: Dark theme with green accents.
 
 ## Demo
 Run: `python -m ttykit.demo`
@@ -34,7 +34,7 @@ Run: `python -m ttykit.demo`
 [Insert GIF link here]
 
 ## Goal
-Learn to design reusable TUI primitives with themes in a terminal.
+Design pre-styled TUI components to make Linux terminals appealing for designers.
 
 ## Lessons Learned
 [To be added after testing]
