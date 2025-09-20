@@ -1,6 +1,7 @@
 from blessed import Terminal
 term = Terminal()
 
+# Keeping three themes for launch: gruvbox_light (warm), solarized_dark (professional), functional (usability-focused)
 THEMES = {
     "gruvbox_light": {
         "button_text": term.black_on_lightyellow,
@@ -32,21 +33,6 @@ THEMES = {
         "warning": term.yellow,
         "error": term.red
     },
-    "cyberpunk": {
-        "button_text": term.black_on_magenta,
-        "button_selected": term.bold + term.cyan,
-        "button_border": term.cyan,
-        "modal_border": term.cyan,
-        "modal_background": term.black_on_magenta,
-        "progress_fill": term.cyan,
-        "progress_empty": term.darkgray,
-        "text_primary": term.cyan,
-        "text_secondary": term.magenta,
-        "accent": term.cyan,
-        "success": term.green,
-        "warning": term.yellow,
-        "error": term.red
-    },
     "functional": {
         # Clean, functional design - monochrome with single accent for clarity
         "button_text": term.white_on_black,
@@ -60,21 +46,6 @@ THEMES = {
         "text_secondary": term.darkgray,
         "accent": term.white,  # No decoration, pure function
         "success": term.white,  # Status through text, not color
-        "warning": term.white,
-        "error": term.white
-    },
-    "minimal": {
-        "button_text": term.white_on_black,
-        "button_selected": term.bold + term.white,
-        "button_border": term.white,
-        "modal_border": term.white,
-        "modal_background": term.white_on_black,
-        "progress_fill": term.white,
-        "progress_empty": term.darkgray,
-        "text_primary": term.white,
-        "text_secondary": term.lightgray,
-        "accent": term.white,
-        "success": term.white,
         "warning": term.white,
         "error": term.white
     }

@@ -6,8 +6,8 @@ import time
 term = Terminal()
 
 def demo_themes():
-    """Demo all available themes with styled components."""
-    themes = list_themes()
+    """Demo the three selected themes with styled components."""
+    themes = ["gruvbox_light", "solarized_dark", "functional"]  # Limited to three for launch
     for theme in themes:
         print(term.clear)
         colors = get_theme_colors(theme)
@@ -229,7 +229,7 @@ def main():
         print(term.move_y(3) + term.center("TTYKit - Complete Pattern Library"))
         print(term.move_y(5) + term.center("A comprehensive TUI UI kit for designer-friendly terminals"))
         print(term.move_y(7) + term.center("Featuring clean, functional design:"))
-        print(term.move_y(9) + term.center("• 5 Built-in Themes (including 'functional')"))
+        print(term.move_y(9) + term.center("• 3 Built-in Themes (including 'functional')"))
         print(term.move_y(10) + term.center("• Multiple Component Styles (including clean variants)"))
         print(term.move_y(11) + term.center("• Advanced Components (lists, tables, status bars)"))
         print(term.move_y(12) + term.center("• Focus on usability and clarity"))
@@ -247,7 +247,7 @@ def main():
         print(term.clear)
         print(term.move_y(6) + term.center("TTYKit Complete Demo Finished!"))
         print(term.move_y(8) + term.center("You've seen the full breadth of TTYKit:"))
-        print(term.move_y(10) + term.center("✓ 5 Themes including clean functional design"))
+        print(term.move_y(10) + term.center("✓ 3 Themes including clean functional design"))
         print(term.move_y(11) + term.center("✓ 6 Component types with multiple styles each"))
         print(term.move_y(12) + term.center("✓ Advanced UI patterns (lists, tables, status bars)"))
         print(term.move_y(13) + term.center("✓ Focus on usability and clarity"))

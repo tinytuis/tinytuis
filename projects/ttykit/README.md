@@ -49,7 +49,7 @@ render_modal("No decoration, pure content", theme="functional", style="functiona
 - **Features**: Percentage display, labels, animations
 
 ```python
-render_progress_bar(0.5, width=30, x=10, y=8, theme="cyberpunk", style="blocks", label="Loading")
+render_progress_bar(0.5, width=30, x=10, y=8, theme="solarized_dark", style="blocks", label="Loading")
 render_progress_bar(0.5, width=30, x=10, y=8, theme="functional", style="functional", label="Progress") # Minimal noise
 ```
 
@@ -59,7 +59,7 @@ render_progress_bar(0.5, width=30, x=10, y=8, theme="functional", style="functio
 
 ```python
 items = ["File", "Edit", "View", "Help"]
-render_list(items, x=10, y=5, selected=1, theme="minimal", style="arrows")
+render_list(items, x=10, y=5, selected=1, theme="gruvbox_light", style="arrows")
 render_list(items, x=10, y=5, selected=1, theme="functional", style="functional") # Contrast over decoration
 ```
 
@@ -88,9 +88,7 @@ render_status_bar("SUCCESS: File saved", status="success", theme="functional") #
 ### Built-in Themes
 - **`gruvbox_light`**: Warm light theme with orange accents (default)
 - **`solarized_dark`**: Professional dark theme with green accents
-- **`cyberpunk`**: Futuristic theme with cyan and magenta
 - **`functional`**: Clean monochrome theme focused on usability
-- **`minimal`**: Clean monochrome theme with white accents
 
 ### Functional Theme Philosophy
 The `functional` theme embodies clean design principles:
@@ -105,7 +103,7 @@ The `functional` theme embodies clean design principles:
 from ttykit.themes import list_themes, get_theme_colors
 
 # List all available themes
-themes = list_themes() # ['gruvbox_light', 'solarized_dark', 'cyberpunk', 'functional', 'minimal']
+themes = list_themes() # ['gruvbox_light', 'solarized_dark', 'functional']
 
 # Get theme colors for custom components
 colors = get_theme_colors("functional")
@@ -148,7 +146,7 @@ When creating custom components, follow these principles:
 render_button("Save", theme="functional", style="functional") # Clean, usable
 
 # Avoid: Over-decorated
-render_button("💾 Save File! ✨", theme="cyberpunk", style="boxed") # Too much visual noise
+render_button("💾 Save File! ✨", theme="solarized_dark", style="boxed") # Too much visual noise
 ```
 
 ### Adding Component Styles
@@ -185,7 +183,7 @@ python demo.py
 ```
 
 The demo showcases:
-- All 5 built-in themes (including functional)
+- All 3 built-in themes (including functional)
 - Every component style variation
 - Interactive examples
 - Complete customization guide
