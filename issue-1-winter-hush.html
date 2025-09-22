@@ -36,44 +36,36 @@
             </header>
 
             <!-- Two Column Layout -->
-            <div class="issue-content">
+            <div class="issue-layout">
                 <!-- Left Column: Demo -->
-                <div class="demo-section">
-                    <div class="terminal-demo">
-                        <div class="terminal-header">
-                            <span class="terminal-title">$ python issues/01-winter-hush/main.py</span>
-                            <div class="terminal-controls">
-                                <span class="control minimize">─</span>
-                                <span class="control maximize">□</span>
-                                <span class="control close">×</span>
-                            </div>
-                        </div>
-                        <div class="terminal-body winter-demo">
-                                <div class="snow-line">❄ • ❅ * ❆ · ○ ❄ • ❅ * ❆ · ○ ❄ • ❅ * ❆ · ○ ❄ • ❅</div>
-                                <div class="snow-line"> ❅ ❄ • ❆ * · ○ ❅ ❄ • ❆ * · ○ ❅ ❄ • ❆ * · ○ ❅</div>
-                                <div class="snow-line">• ❄ ❅ ○ ❆ * · • ❄ ❅ ○ ❆ * · • ❄ ❅ ○ ❆ * · • ❄</div>
-                                <div class="snow-line"> ❆ · ❄ ❅ • ○ * ❆ · ❄ ❅ • ○ * ❆ · ❄ ❅ • ○ * ❆</div>
-                                <div class="snow-line">○ * ❅ ❄ ❆ • · ○ * ❅ ❄ ❆ • · ○ * ❅ ❄ ❆ • · ○</div>
-                                <div class="snow-line"> · ❄ • ❅ * ❆ ○ · ❄ • ❅ * ❆ ○ · ❄ • ❅ * ❆ ○ ·</div>
-                                <div class="snow-line">                    ^</div>
-                                <div class="snow-line"></div>
-                                <div class="collected-text">fragments caught: "winter whispers..."</div>
+                <div class="issue-demo">
+                    <div class="demo-frame">
+                        <div class="demo-header">$ python issues/01-winter-hush/main.py</div>
+                        <div class="demo-content winter-demo">
+                            <div class="snow-line">❄ • ❅ * ❆ · ○ ❄ • ❅ * ❆ · ○ ❄ • ❅ * ❆ · ○ ❄ • ❅</div>
+                            <div class="snow-line"> ❅ ❄ • ❆ * · ○ ❅ ❄ • ❆ * · ○ ❅ ❄ • ❆ * · ○ ❅</div>
+                            <div class="snow-line">• ❄ ❅ ○ ❆ * · • ❄ ❅ ○ ❆ * · • ❄ ❅ ○ ❆ * · • ❄</div>
+                            <div class="snow-line"> ❆ · ❄ ❅ • ○ * ❆ · ❄ ❅ • ○ * ❆ · ❄ ❅ • ○ * ❆</div>
+                            <div class="snow-line">○ * ❅ ❄ ❆ • · ○ * ❅ ❄ ❆ • · ○ * ❅ ❄ ❆ • · ○</div>
+                            <div class="snow-line"> · ❄ • ❅ * ❆ ○ · ❄ • ❅ * ❆ ○ · ❄ • ❅ * ❆ ○ ·</div>
+                            <div class="snow-line">                    ^</div>
+                            <div class="snow-line"></div>
+                            <div class="collected-text">fragments caught: "winter whispers..."</div>
                         </div>
                     </div>
 
                     <div class="demo-controls">
-                        <div class="control-group">
+                        <div class="control-hint">
                             <span class="key">←</span> <span class="key">→</span> Move to catch snowflakes
                         </div>
-                        <div class="control-group">
+                        <div class="control-hint">
                             <span class="key">q</span> Quit the experience
                         </div>
                     </div>
                 </div>
 
                 <!-- Right Column: Description -->
-                <div class="description-section">
-                    <div class="description-content">
+                <div class="issue-details">
                     <section class="what-it-is">
                         <h2>What it is</h2>
                         <p>
@@ -132,7 +124,6 @@ $ python issues/01-winter-hush/main.py</code></pre>
                             </div>
                         </div>
                     </section>
-                    </div>
                 </div>
             </div>
 
@@ -195,15 +186,11 @@ $ python issues/01-winter-hush/main.py</code></pre>
     </script>
 
     <style>
-        /* Winter Hush personality */
+        /* Winter Hush specific styling */
         .winter-demo {
             background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%);
             color: var(--blue-accent);
-            padding: var(--space-md);
-            min-height: 320px;
-            font-family: var(--font-mono);
             position: relative;
-            overflow: hidden;
         }
 
         .winter-demo::before {
@@ -223,47 +210,14 @@ $ python issues/01-winter-hush/main.py</code></pre>
             z-index: 1;
             color: rgba(173, 216, 230, 0.95);
             text-shadow: 0 0 4px rgba(173, 216, 230, 0.6), 0 0 8px rgba(255, 255, 255, 0.3);
-            font-size: 14px;
             line-height: 1.3;
             letter-spacing: 0.5px;
             white-space: nowrap;
-            overflow: hidden;
             text-align: center;
+            margin-bottom: 4px;
         }
 
-        /* Add some sparkle effects to random snowflakes */
-        .snow-line:nth-child(3n)::after {
-            content: '';
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            animation: sparkle 2s infinite ease-in-out;
-            left: 30%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .snow-line:nth-child(5n)::before {
-            content: '';
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            background: rgba(173, 216, 230, 0.6);
-            border-radius: 50%;
-            animation: sparkle 3s infinite ease-in-out;
-            left: 70%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        @keyframes sparkle {
-            0%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
-            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
-        }
-
-        /* Cursor should stand out more - updated for new position (line 7 = nth-child(7)) */
+        /* Cursor should stand out more */
         .snow-line:nth-child(7) {
             color: var(--amber-accent);
             text-shadow: 0 0 6px rgba(255, 176, 0, 0.8);
@@ -281,53 +235,7 @@ $ python issues/01-winter-hush/main.py</code></pre>
             z-index: 1;
             color: var(--amber-accent);
             text-shadow: 0 0 2px rgba(255, 176, 0, 0.4);
-        }
-
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            .winter-demo {
-                min-height: 280px;
-                padding: var(--space-sm);
-            }
-            
-            .snow-line {
-                font-size: 12px;
-                line-height: 1.2;
-                letter-spacing: 0.3px;
-            }
-            
-            .issue-content {
-                flex-direction: column;
-            }
-            
-            .demo-section {
-                margin-bottom: var(--space-lg);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .winter-demo {
-                min-height: 250px;
-                padding: var(--space-xs);
-            }
-            
-            .snow-line {
-                font-size: 10px;
-                line-height: 1.1;
-                letter-spacing: 0.2px;
-            }
-            
-            .terminal-demo {
-                margin: 0 -5px;
-            }
-        }
-
-        /* Ensure snow lines don't wrap on smaller screens */
-        @media (max-width: 600px) {
-            .snow-line {
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
+            margin-top: var(--space-sm);
         }
     </style>
 </body>
