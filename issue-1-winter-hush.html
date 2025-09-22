@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TinyTUIs #1: Winter Hush - Short-form software stories for the terminal</title>
+    <title>TinyTUIs #1 — Winter Hush</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/issue.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>$</text></svg>">
@@ -49,16 +49,35 @@
                             </div>
                         </div>
                         <div class="terminal-body winter-demo">
-                                <div class="snow-line">     ❄        ❅     ❄</div>
-                                <div class="snow-line">  ❅     ❄        ❅   </div>
-                                <div class="snow-line">       ❅    ❄        </div>
-                                <div class="snow-line">❄        ❅        ❄  </div>
-                                <div class="snow-line">   ❅        ❄    ❅   </div>
-                                <div class="snow-line">        ❄     ❅      </div>
-                                <div class="snow-line">  ❄    ❅        ❄    </div>
-                                <div class="snow-line">     ❅        ❄   ❅  </div>
-                                <div class="snow-line">           ^           </div>
-                                <div class="snow-line">                      </div>
+                                <div class="snow-line">❄        ❅                    ❄      ❅           ❄                ❅        ❄</div>
+                                <div class="snow-line">      ❅                ❄           ❅        ❄                    ❅              ❄</div>
+                                <div class="snow-line">                ❄    ❅                        ❄        ❅                    ❄</div>
+                                <div class="snow-line">❅           ❄                ❅                    ❄        ❅                  </div>
+                                <div class="snow-line">        ❄                        ❅        ❄                    ❅        ❄      </div>
+                                <div class="snow-line">                    ❅        ❄                ❅                        ❄        </div>
+                                <div class="snow-line">❄                        ❅                ❄        ❅                          ❄</div>
+                                <div class="snow-line">    ❅        ❄                    ❅                        ❄        ❅          </div>
+                                <div class="snow-line">                ❄        ❅                    ❄                ❅              </div>
+                                <div class="snow-line">        ❅                    ❄        ❅                            ❄          </div>
+                                <div class="snow-line">❄                ❅                        ❄        ❅                    ❄    </div>
+                                <div class="snow-line">            ❄                    ❅                ❄        ❅                  </div>
+                                <div class="snow-line">                        ❄        ❅                    ❄                ❅      </div>
+                                <div class="snow-line">    ❅                            ❄        ❅                        ❄          </div>
+                                <div class="snow-line">                ❄        ❅                            ❄        ❅              </div>
+                                <div class="snow-line">❄                    ❅                ❄                    ❅        ❄        </div>
+                                <div class="snow-line">        ❅                        ❄                ❅                    ❄      </div>
+                                <div class="snow-line">                    ❄        ❅                        ❄        ❅              </div>
+                                <div class="snow-line">❅                            ❄        ❅                            ❄          </div>
+                                <div class="snow-line">            ❄        ❅                    ❄                ❅                  </div>
+                                <div class="snow-line">                        ❄                ❅        ❄                    ❅      </div>
+                                <div class="snow-line">❄        ❅                    ❄                        ❅        ❄            </div>
+                                <div class="snow-line">                ❄                ❅                ❄        ❅                  </div>
+                                <div class="snow-line">        ❅                            ❄                    ❅        ❄          </div>
+                                <div class="snow-line">                    ❄        ❅                        ❄                ❅      </div>
+                                <div class="snow-line">❅                            ❄        ❅                            ❄          </div>
+                                <div class="snow-line">            ❄        ❅                    ❄                ❅                  </div>
+                                <div class="snow-line">                                    ^                                          </div>
+                                <div class="snow-line">                                                                               </div>
                                 <div class="collected-text">fragments caught: "winter whispers..."</div>
                         </div>
                     </div>
@@ -168,7 +187,7 @@ $ python issues/01-winter-hush/main.py</code></pre>
     </footer>
 
     <script>
-        // Animate the snow demo
+        // Enhanced snow animation
         function animateSnow() {
             const snowLines = document.querySelectorAll('.snow-line');
             let frame = 0;
@@ -176,21 +195,61 @@ $ python issues/01-winter-hush/main.py</code></pre>
             setInterval(() => {
                 snowLines.forEach((line, index) => {
                     if (index < snowLines.length - 2) { // Don't animate cursor or collected text
-                        // Gentle, natural snow drift
-                        const baseOffset = Math.sin(frame * 0.08 + index * 0.6) * 6;
-                        const windVariation = Math.sin(frame * 0.03 + index * 0.2) * 2;
-                        const offset = baseOffset + windVariation;
+                        // More dynamic snow movement with layered effects
+                        const primaryWave = Math.sin(frame * 0.12 + index * 0.8) * 25;
+                        const secondaryWave = Math.sin(frame * 0.06 + index * 0.4) * 15;
+                        const windGust = Math.sin(frame * 0.02 + index * 0.1) * 8;
+                        const verticalFloat = Math.cos(frame * 0.08 + index * 0.5) * 3;
                         
-                        line.style.transform = `translateX(${offset}px)`;
-                        line.style.transition = 'transform 0.3s ease-out';
+                        // Different layers of snow move at different speeds and amplitudes
+                        const layerMultiplier = 1 + (index % 3) * 0.3; // Depth effect
+                        const horizontalOffset = (primaryWave + secondaryWave + windGust) * layerMultiplier;
+                        
+                        line.style.transform = `translateX(${horizontalOffset}px) translateY(${verticalFloat}px)`;
+                        line.style.transition = 'transform 0.4s ease-out';
+                        
+                        // Subtle opacity variation to simulate depth
+                        const opacityVariation = 0.7 + Math.sin(frame * 0.05 + index * 0.3) * 0.3;
+                        line.style.opacity = opacityVariation;
                     }
                 });
                 frame++;
-            }, 200); // Smooth, contemplative pace
+            }, 150); // Slightly faster for more dynamic feel
         }
 
-        // Start animation when page loads
-        document.addEventListener('DOMContentLoaded', animateSnow);
+        // Add occasional wind gusts for extra dynamism
+        function addWindGusts() {
+            const snowLines = document.querySelectorAll('.snow-line');
+            
+            setInterval(() => {
+                if (Math.random() < 0.3) { // 30% chance of wind gust
+                    const gustStrength = 20 + Math.random() * 30;
+                    const gustDirection = Math.random() > 0.5 ? 1 : -1;
+                    
+                    snowLines.forEach((line, index) => {
+                        if (index < snowLines.length - 2) {
+                            const currentTransform = line.style.transform || 'translateX(0px) translateY(0px)';
+                            const gustOffset = gustStrength * gustDirection * (0.5 + Math.random() * 0.5);
+                            
+                            // Apply gust effect temporarily
+                            line.style.transition = 'transform 0.8s ease-out';
+                            line.style.transform = currentTransform.replace(/translateX\([^)]*\)/, `translateX(${gustOffset}px)`);
+                            
+                            // Return to normal animation after gust
+                            setTimeout(() => {
+                                line.style.transition = 'transform 0.4s ease-out';
+                            }, 800);
+                        }
+                    });
+                }
+            }, 3000); // Check for gusts every 3 seconds
+        }
+
+        // Start animations when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            animateSnow();
+            addWindGusts();
+        });
     </script>
 
     <style>
@@ -199,9 +258,10 @@ $ python issues/01-winter-hush/main.py</code></pre>
             background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%);
             color: var(--blue-accent);
             padding: var(--space-md);
-            min-height: 350px;
+            min-height: 500px;
             font-family: var(--font-mono);
             position: relative;
+            overflow: hidden;
         }
 
         .winter-demo::before {
@@ -219,8 +279,57 @@ $ python issues/01-winter-hush/main.py</code></pre>
         .snow-line {
             position: relative;
             z-index: 1;
-            color: rgba(173, 216, 230, 0.9);
-            text-shadow: 0 0 3px rgba(173, 216, 230, 0.3);
+            color: rgba(173, 216, 230, 0.95);
+            text-shadow: 0 0 4px rgba(173, 216, 230, 0.6), 0 0 8px rgba(255, 255, 255, 0.3);
+            font-size: 14px;
+            line-height: 1.3;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        /* Add some sparkle effects to random snowflakes */
+        .snow-line:nth-child(3n)::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: sparkle 2s infinite ease-in-out;
+            left: 30%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .snow-line:nth-child(5n)::before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            background: rgba(173, 216, 230, 0.6);
+            border-radius: 50%;
+            animation: sparkle 3s infinite ease-in-out;
+            left: 70%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+        }
+
+        /* Cursor should stand out more - updated for new position (line 28 = nth-child(28)) */
+        .snow-line:nth-child(28) {
+            color: var(--amber-accent);
+            text-shadow: 0 0 6px rgba(255, 176, 0, 0.8);
+            font-weight: bold;
+            animation: cursor-pulse 1.5s infinite ease-in-out;
+        }
+
+        @keyframes cursor-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
 
         .collected-text {
@@ -228,6 +337,66 @@ $ python issues/01-winter-hush/main.py</code></pre>
             z-index: 1;
             color: var(--amber-accent);
             text-shadow: 0 0 2px rgba(255, 176, 0, 0.4);
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .winter-demo {
+                min-height: 350px;
+                padding: var(--space-sm);
+            }
+            
+            .snow-line {
+                font-size: 11px;
+                line-height: 1.2;
+                letter-spacing: 0.2px;
+            }
+            
+            .issue-content {
+                flex-direction: column;
+            }
+            
+            .demo-section {
+                margin-bottom: var(--space-lg);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .winter-demo {
+                min-height: 280px;
+                padding: var(--space-xs);
+            }
+            
+            .snow-line {
+                font-size: 9px;
+                line-height: 1.1;
+                letter-spacing: 0.1px;
+            }
+            
+            .terminal-demo {
+                margin: 0 -5px;
+            }
+        }
+
+        /* Ensure snow lines don't wrap on smaller screens */
+        @media (max-width: 600px) {
+            .snow-line {
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        /* Large screens get even more space */
+        @media (min-width: 1200px) {
+            .winter-demo {
+                min-height: 600px;
+            }
+            
+            .snow-line {
+                font-size: 16px;
+                line-height: 1.4;
+                letter-spacing: 0.8px;
+            }
         }
     </style>
 </body>
