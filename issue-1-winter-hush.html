@@ -200,7 +200,7 @@ $ python issues/01-winter-hush/main.py</code></pre>
             background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%);
             color: var(--blue-accent);
             padding: var(--space-md);
-            min-height: 500px;
+            min-height: 320px;
             font-family: var(--font-mono);
             position: relative;
             overflow: hidden;
@@ -286,14 +286,14 @@ $ python issues/01-winter-hush/main.py</code></pre>
         /* Mobile responsiveness */
         @media (max-width: 768px) {
             .winter-demo {
-                min-height: 350px;
+                min-height: 280px;
                 padding: var(--space-sm);
             }
             
             .snow-line {
-                font-size: 11px;
+                font-size: 12px;
                 line-height: 1.2;
-                letter-spacing: 0.2px;
+                letter-spacing: 0.3px;
             }
             
             .issue-content {
@@ -307,14 +307,14 @@ $ python issues/01-winter-hush/main.py</code></pre>
 
         @media (max-width: 480px) {
             .winter-demo {
-                min-height: 280px;
+                min-height: 250px;
                 padding: var(--space-xs);
             }
             
             .snow-line {
-                font-size: 9px;
+                font-size: 10px;
                 line-height: 1.1;
-                letter-spacing: 0.1px;
+                letter-spacing: 0.2px;
             }
             
             .terminal-demo {
@@ -327,19 +327,6 @@ $ python issues/01-winter-hush/main.py</code></pre>
             .snow-line {
                 overflow: hidden;
                 text-overflow: ellipsis;
-            }
-        }
-
-        /* Large screens get even more space */
-        @media (min-width: 1200px) {
-            .winter-demo {
-                min-height: 600px;
-            }
-            
-            .snow-line {
-                font-size: 16px;
-                line-height: 1.4;
-                letter-spacing: 0.8px;
             }
         }
     </style>

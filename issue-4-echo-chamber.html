@@ -246,20 +246,24 @@ $ python issues/04-echo-chamber/main.py</code></pre>
             background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
             color: var(--blue-accent);
             padding: var(--space-md);
-            min-height: 350px;
+            min-height: 320px;
             font-family: var(--font-mono);
+            position: relative;
+            overflow: hidden;
         }
 
         .echo-session {
             height: 100%;
             display: flex;
             flex-direction: column;
-            gap: var(--space-sm);
+            gap: var(--space-xs);
         }
 
         .input-line {
             color: var(--terminal-white);
             margin-bottom: var(--space-xs);
+            font-size: 14px;
+            line-height: 1.4;
         }
 
         .prompt {
@@ -272,12 +276,13 @@ $ python issues/04-echo-chamber/main.py</code></pre>
 
         .echo-responses {
             margin-left: var(--space-md);
-            margin-bottom: var(--space-md);
+            margin-bottom: var(--space-sm);
         }
 
         .echo-line {
-            padding: 2px 0;
+            padding: 3px 0;
             font-size: 13px;
+            line-height: 1.3;
             opacity: 0.3;
             transition: all 0.3s ease;
         }
@@ -291,11 +296,70 @@ $ python issues/04-echo-chamber/main.py</code></pre>
         .current-input {
             margin-top: auto;
             color: var(--terminal-white);
+            font-size: 14px;
         }
 
         .cursor-blink {
             color: var(--blue-accent);
             animation: blink 1s infinite;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .echo-demo {
+                min-height: 280px;
+                padding: var(--space-sm);
+            }
+            
+            .input-line, .current-input {
+                font-size: 12px;
+            }
+            
+            .echo-line {
+                font-size: 11px;
+                padding: 2px 0;
+            }
+            
+            .echo-responses {
+                margin-left: var(--space-sm);
+                margin-bottom: var(--space-xs);
+            }
+            
+            .echo-session {
+                gap: 6px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .echo-demo {
+                min-height: 250px;
+                padding: var(--space-xs);
+            }
+            
+            .input-line, .current-input {
+                font-size: 11px;
+            }
+            
+            .echo-line {
+                font-size: 10px;
+                padding: 1px 0;
+            }
+            
+            .echo-responses {
+                margin-left: 12px;
+            }
+            
+            .echo-2 { letter-spacing: 1px; }
+            .echo-4 { letter-spacing: 2px; }
+        }
+
+        /* Ensure content fits on smaller screens */
+        @media (max-width: 600px) {
+            .echo-line {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
         }
     </style>
 </body>

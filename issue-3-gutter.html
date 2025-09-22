@@ -241,8 +241,10 @@ $ python issues/03-gutter/main.py</code></pre>
             background: linear-gradient(135deg, #1e1e1e 0%, #3c3c3c 100%);
             color: var(--amber-accent);
             padding: var(--space-md);
-            min-height: 350px;
+            min-height: 320px;
             font-family: var(--font-mono);
+            position: relative;
+            overflow: hidden;
         }
 
         .comic-page {
@@ -291,6 +293,73 @@ $ python issues/03-gutter/main.py</code></pre>
 
         .navigation-hint {
             font-style: italic;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .gutter-demo {
+                min-height: 280px;
+                padding: var(--space-sm);
+            }
+            
+            .panel-grid {
+                gap: 8px;
+                margin-bottom: var(--space-sm);
+            }
+            
+            .panel {
+                min-height: 60px;
+            }
+            
+            .panel-border {
+                font-size: 9px;
+                line-height: 1.1;
+            }
+            
+            .page-info {
+                font-size: 10px;
+                padding-top: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gutter-demo {
+                min-height: 250px;
+                padding: var(--space-xs);
+            }
+            
+            .panel-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+                gap: 6px;
+            }
+            
+            .panel-3 {
+                grid-column: 1;
+            }
+            
+            .panel {
+                min-height: 50px;
+            }
+            
+            .panel-border {
+                font-size: 8px;
+                line-height: 1.0;
+            }
+            
+            .page-info {
+                font-size: 9px;
+                flex-direction: column;
+                gap: 4px;
+                text-align: center;
+            }
+        }
+
+        /* Ensure content fits on smaller screens */
+        @media (max-width: 600px) {
+            .panel-border {
+                overflow: hidden;
+            }
         }
     </style>
 </body>

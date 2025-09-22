@@ -250,7 +250,7 @@ $ python issues/05-amber-light/main.py</code></pre>
             background: linear-gradient(135deg, #2c1810 0%, #4a2c17 100%);
             color: var(--amber-accent);
             padding: var(--space-md);
-            min-height: 350px;
+            min-height: 320px;
             font-family: var(--font-mono);
             position: relative;
             overflow: hidden;
@@ -310,6 +310,67 @@ $ python issues/05-amber-light/main.py</code></pre>
 
         .log-entry:nth-child(even) .log-text {
             color: rgba(255, 191, 0, 0.8);
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .amber-demo {
+                min-height: 280px;
+                padding: var(--space-sm);
+            }
+            
+            .log-stream {
+                gap: 3px;
+            }
+            
+            .log-entry {
+                font-size: 11px;
+                line-height: 1.3;
+                gap: 8px;
+            }
+            
+            .timestamp {
+                font-size: 9px;
+                min-width: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .amber-demo {
+                min-height: 250px;
+                padding: var(--space-xs);
+            }
+            
+            .log-stream {
+                gap: 2px;
+            }
+            
+            .log-entry {
+                font-size: 10px;
+                line-height: 1.2;
+                gap: 6px;
+                flex-direction: column;
+            }
+            
+            .timestamp {
+                font-size: 8px;
+                min-width: auto;
+                margin-bottom: 2px;
+            }
+            
+            .log-text {
+                padding-left: 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+
+        /* Ensure content fits on smaller screens */
+        @media (max-width: 600px) {
+            .log-text {
+                max-width: 100%;
+            }
         }
     </style>
 </body>

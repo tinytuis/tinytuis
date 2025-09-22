@@ -279,13 +279,14 @@ $ python issues/06-caret-cuts/main.py</code></pre>
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             color: var(--green-accent);
             padding: var(--space-md);
-            min-height: 350px;
+            min-height: 320px;
             font-family: var(--font-mono);
             position: relative;
+            overflow: hidden;
         }
 
         .experiment-container {
-            height: 280px;
+            height: 270px;
             position: relative;
         }
 
@@ -367,6 +368,122 @@ $ python issues/06-caret-cuts/main.py</code></pre>
             font-size: 10px;
             color: var(--gray-medium);
             font-style: italic;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .caret-demo {
+                min-height: 280px;
+                padding: var(--space-sm);
+            }
+            
+            .experiment-container {
+                height: 220px;
+            }
+            
+            .experiment-title {
+                font-size: 10px;
+                margin-bottom: 8px;
+            }
+            
+            .unravel-text {
+                padding-top: var(--space-md);
+            }
+            
+            .word {
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+            
+            .unraveling {
+                font-size: 11px;
+                line-height: 1.1;
+            }
+            
+            .stars {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+            
+            .constellation-hint {
+                font-size: 9px;
+            }
+            
+            .chat-line {
+                font-size: 11px;
+                padding: 1px 0;
+            }
+            
+            .experiment-nav {
+                font-size: 9px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .caret-demo {
+                min-height: 250px;
+                padding: var(--space-xs);
+            }
+            
+            .experiment-container {
+                height: 190px;
+            }
+            
+            .experiment-title {
+                font-size: 9px;
+                margin-bottom: 6px;
+            }
+            
+            .unravel-text {
+                padding-top: var(--space-sm);
+            }
+            
+            .word {
+                font-size: 14px;
+                margin-bottom: 6px;
+            }
+            
+            .unraveling {
+                font-size: 10px;
+                line-height: 1.0;
+            }
+            
+            .constellation {
+                padding-top: var(--space-sm);
+            }
+            
+            .stars {
+                font-size: 12px;
+                line-height: 1.4;
+                margin-bottom: 6px;
+            }
+            
+            .constellation-hint {
+                font-size: 8px;
+            }
+            
+            .chat-scroll {
+                padding-top: 6px;
+            }
+            
+            .chat-line {
+                font-size: 10px;
+                padding: 1px 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            
+            .experiment-nav {
+                font-size: 8px;
+            }
+        }
+
+        /* Ensure content fits on smaller screens */
+        @media (max-width: 600px) {
+            .chat-line {
+                max-width: 100%;
+            }
         }
     </style>
 </body>

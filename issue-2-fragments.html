@@ -219,12 +219,13 @@ $ python issues/02-fragments/main.py</code></pre>
             background: linear-gradient(135deg, #2c2c54 0%, #40407a 100%);
             color: rgba(255, 255, 255, 0.9);
             padding: var(--space-md);
-            min-height: 300px;
+            min-height: 320px;
             position: relative;
+            overflow: hidden;
         }
 
         .fragment-stream {
-            height: 250px;
+            height: 270px;
             overflow: hidden;
             margin-bottom: var(--space-md);
         }
@@ -261,6 +262,64 @@ $ python issues/02-fragments/main.py</code></pre>
         .cursor-blink {
             color: var(--amber-accent);
             animation: blink 1s infinite;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .fragments-demo {
+                min-height: 280px;
+                padding: var(--space-sm);
+            }
+            
+            .fragment-stream {
+                height: 220px;
+                margin-bottom: var(--space-sm);
+            }
+            
+            .fragment {
+                font-size: 12px;
+                line-height: 1.3;
+                padding: 4px 0;
+            }
+            
+            .fragment-input {
+                bottom: var(--space-sm);
+                left: var(--space-sm);
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .fragments-demo {
+                min-height: 250px;
+                padding: var(--space-xs);
+            }
+            
+            .fragment-stream {
+                height: 190px;
+            }
+            
+            .fragment {
+                font-size: 11px;
+                line-height: 1.2;
+                padding: 3px 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            
+            .fragment-input {
+                bottom: var(--space-xs);
+                left: var(--space-xs);
+                font-size: 11px;
+            }
+        }
+
+        /* Ensure content fits on smaller screens */
+        @media (max-width: 600px) {
+            .fragment {
+                max-width: 100%;
+            }
         }
     </style>
 </body>
