@@ -11,7 +11,7 @@ from dataclasses import dataclass
 from typing import List, Optional
 
 # Add lib to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'lib'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'lib'))
 from tinykit import Canvas, ArtisticThemes, clear_screen, SimpleInput, typewriter_effect
 
 
@@ -31,31 +31,31 @@ class RackOfZines:
         
         # Define the catalog of issues
         self.issues = [
-            Issue(1, "Winter Hush", 
+            Issue(1, "Winter Hush",
                   "ASCII snow drifting down the terminal. Catch snowflakes to reveal fragments of text.",
-                  "issues/winter-hush/main.py"),
-            Issue(2, "Fragments.txt", 
+                  "issues/01-winter-hush/main.py"),
+            Issue(2, "Fragments.txt",
                   "A scrolling stack of notes, quotes, diary lines. Stitch fragments into narrative.",
-                  "issues/fragments-txt/main.py", "coming_soon"),
-            Issue(3, "Gutter", 
+                  "issues/02-fragments/main.py"),
+            Issue(3, "Gutter",
                   "A comic reader in the terminal. ASCII panels navigated with arrow keys.",
-                  "issues/gutter/main.py", "coming_soon"),
-            Issue(4, "Echo Chamber", 
+                  "issues/03-gutter/main.py"),
+            Issue(4, "Echo Chamber",
                   "Anything typed echoes back distorted. Strange dialogue between user and machine.",
-                  "issues/echo-chamber/main.py", "coming_soon"),
-            Issue(5, "Amber Light", 
+                  "issues/04-echo-chamber/main.py"),
+            Issue(5, "Amber Light",
                   "Retro amber terminal theme. Logs from a fictional machine, sci-fi diary entries.",
-                  "issues/amber-light/main.py", "coming_soon"),
-            Issue(6, "Caret Cuts", 
+                  "issues/05-amber-light/main.py"),
+            Issue(6, "Caret Cuts",
                   "Very short one-shot TUIs. Words unraveling, ASCII constellations, conversations.",
-                  "issues/caret-cuts/main.py", "coming_soon"),
-            Issue(7, "Exquisite Pane", 
+                  "issues/06-caret-cuts/main.py"),
+            Issue(7, "Exquisite Pane",
                   "Collaborative exquisite-corpse comic. Contributors add panels to surreal zine.",
                   "issues/exquisite-pane/main.py", "coming_soon"),
-            Issue(8, "The Prompt", 
+            Issue(8, "The Prompt",
                   "TUI asks questions. Your answers shape the story. Interactive fiction meets diary.",
                   "issues/the-prompt/main.py", "coming_soon"),
-            Issue(9, "Monospace Dreams", 
+            Issue(9, "Monospace Dreams",
                   "Dreamlike text fragments drift and recombine. Surreal, generative dream zine.",
                   "issues/monospace-dreams/main.py", "coming_soon"),
         ]
