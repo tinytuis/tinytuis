@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinyTUIs #5: Amber Light - Short-form software stories for the terminal</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/issue.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>$</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="/" class="logo">TinyTUIs</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/#catalog">← Back to Catalog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Issue Content -->
+    <main class="issue-main">
+        <div class="issue-container">
+            <!-- Issue Header -->
+            <header class="issue-header">
+                <div class="issue-number">TinyTUIs #5</div>
+                <h1 class="issue-title">Amber Light</h1>
+                <div class="issue-subtitle">A retro terminal glows amber. Logs appear like fragments of a lost diary</div>
+                <div class="issue-meta">
+                    <span class="series-tag">Terminal Nostalgia</span>
+                    <span class="issue-date">Published: Winter 2025</span>
+                </div>
+            </header>
+
+            <!-- Two Column Layout -->
+            <div class="issue-content">
+                <!-- Left Column: Demo -->
+                <div class="demo-section">
+                    <div class="terminal-demo">
+                        <div class="terminal-header">
+                            <span class="terminal-title">$ python issues/amber-light/main.py</span>
+                            <div class="terminal-controls">
+                                <span class="control minimize">─</span>
+                                <span class="control maximize">□</span>
+                                <span class="control close">×</span>
+                            </div>
+                        </div>
+                        <div class="terminal-body amber-demo">
+                            <div class="amber-glow-overlay"></div>
+                            <div class="log-stream">
+                                <div class="log-entry">
+                                    <span class="timestamp">[1987.03.15 14:23:07]</span>
+                                    <span class="log-text">system.boot: warming up...</span>
+                                </div>
+                                <div class="log-entry">
+                                    <span class="timestamp">[1987.03.15 14:23:12]</span>
+                                    <span class="log-text">memory.check: 640K should be enough</span>
+                                </div>
+                                <div class="log-entry">
+                                    <span class="timestamp">[1987.03.15 14:23:18]</span>
+                                    <span class="log-text">diary.entry: coffee tastes different today</span>
+                                </div>
+                                <div class="log-entry">
+                                    <span class="timestamp">[1987.03.15 14:23:25]</span>
+                                    <span class="log-text">user.thought: the future feels so close</span>
+                                </div>
+                                <div class="log-entry">
+                                    <span class="timestamp">[1987.03.15 14:23:31]</span>
+                                    <span class="log-text">system.hum: 60Hz constant companion</span>
+                                </div>
+                                <div class="log-entry">
+                                    <span class="timestamp">[1987.03.15 14:23:38]</span>
+                                    <span class="log-text">memory.fragment: her laugh echoes</span>
+                                </div>
+                                <div class="log-entry">
+                                    <span class="timestamp">[1987.03.15 14:23:44]</span>
+                                    <span class="log-text">disk.spin: stories waiting to be told</span>
+                                </div>
+                                <div class="log-entry current">
+                                    <span class="timestamp">[1987.03.15 14:23:50]</span>
+                                    <span class="log-text">terminal.ready: █</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-controls">
+                        <div class="control-group">
+                            <span class="key">space</span> pause/resume
+                        </div>
+                        <div class="control-group">
+                            <span class="key">↑↓</span> scroll history
+                        </div>
+                        <div class="control-group">
+                            <span class="key">f</span> filter entries
+                        </div>
+                        <div class="control-group">
+                            <span class="key">q</span> quit
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Description -->
+                <div class="description-section">
+                    <div class="description-content">
+                        <section class="what-it-is">
+                            <h2>What it is</h2>
+                            <p>A retro terminal that glows amber. Logs appear like fragments of a lost diary, part machine, part memory. The screen hums with the feeling of old hardware kept alive.</p>
+                            
+                            <p>Each log entry blends system messages with human thoughts, creating a stream of consciousness that feels both computational and deeply personal. The amber glow evokes the warmth of vintage terminals from computing's early days.</p>
+                        </section>
+
+                        <section class="run-it">
+                            <h2>Run it</h2>
+                            <div class="code-block">
+                                <div class="code-header">Terminal</div>
+                                <pre><code>$ git clone https://github.com/tinytuis/tinytuis.git
+$ cd tinytuis
+$ python issues/amber-light/main.py</code></pre>
+                            </div>
+                            <p class="requirements">Requires Python 3.7+ and the <code>blessed</code> library.</p>
+                        </section>
+
+                        <section class="notes">
+                            <h2>Notes</h2>
+                            <p>Inspired by the golden age of computing—when terminals glowed amber or green, when the hum of hard drives was a constant companion, when the future felt both infinite and intimate.</p>
+                            
+                            <p>The program generates logs from multiple sources: system events, memory fragments, diary entries, and machine thoughts. Each category has its own rhythm and voice, creating a layered narrative.</p>
+                            
+                            <p>You can feed it your own log files, journal entries, or any text. Watch your words drift by in amber light, transformed into the poetry of old machines.</p>
+                        </section>
+
+                        <section class="technical-details">
+                            <h2>Technical Details</h2>
+                            <div class="tech-grid">
+                                <div class="tech-item">
+                                    <strong>Language:</strong> Python 3.7+
+                                </div>
+                                <div class="tech-item">
+                                    <strong>Dependencies:</strong> blessed, threading
+                                </div>
+                                <div class="tech-item">
+                                    <strong>Theme:</strong> Amber (vintage terminal glow)
+                                </div>
+                                <div class="tech-item">
+                                    <strong>Input:</strong> Space, arrow keys, 'f' filter, 'q' to quit
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="issue-nav">
+                <div class="nav-item prev">
+                    <a href="issue-4-echo-chamber.html">
+                        <span>← Previous Issue</span>
+                        <small>Echo Chamber</small>
+                    </a>
+                </div>
+                <div class="nav-item catalog">
+                    <a href="/#catalog">
+                        <span>View All Issues</span>
+                        <small>Catalog</small>
+                    </a>
+                </div>
+                <div class="nav-item next">
+                    <a href="issue-6-caret-cuts.html">
+                        <span>Next Issue →</span>
+                        <small>Caret Cuts</small>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 TinyTUIs • Monospace meets zine culture</p>
+        </div>
+    </footer>
+
+    <script>
+        // Log stream animation
+        function animateLogs() {
+            const logEntries = document.querySelectorAll('.log-entry');
+            let currentIndex = 0;
+            
+            function showNextLog() {
+                logEntries.forEach((entry, index) => {
+                    if (index < currentIndex) {
+                        entry.style.opacity = '0.6';
+                        entry.style.transform = 'translateY(0)';
+                    } else if (index === currentIndex) {
+                        entry.style.opacity = '1';
+                        entry.style.transform = 'translateY(0)';
+                        entry.classList.add('current');
+                    } else {
+                        entry.style.opacity = '0';
+                        entry.style.transform = 'translateY(10px)';
+                        entry.classList.remove('current');
+                    }
+                });
+                
+                currentIndex = Math.min(currentIndex + 1, logEntries.length - 1);
+                
+                if (currentIndex < logEntries.length - 1) {
+                    setTimeout(showNextLog, 2000);
+                }
+            }
+            
+            // Initial setup
+            logEntries.forEach((entry, index) => {
+                entry.style.transition = 'all 0.5s ease';
+                entry.style.opacity = '0';
+                entry.style.transform = 'translateY(10px)';
+            });
+            
+            // Start animation
+            setTimeout(showNextLog, 1000);
+        }
+
+        // Amber glow effect
+        function animateAmberGlow() {
+            const glowOverlay = document.querySelector('.amber-glow-overlay');
+            if (glowOverlay) {
+                setInterval(() => {
+                    const intensity = 0.1 + Math.random() * 0.05;
+                    glowOverlay.style.opacity = intensity;
+                }, 100);
+            }
+        }
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            animateLogs();
+            animateAmberGlow();
+        });
+    </script>
+
+    <style>
+        .amber-demo {
+            background: linear-gradient(135deg, #2c1810 0%, #4a2c17 100%);
+            color: var(--amber-accent);
+            padding: var(--space-md);
+            min-height: 350px;
+            font-family: var(--font-mono);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .amber-glow-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(255, 191, 0, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+            opacity: 0.1;
+        }
+
+        .log-stream {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .log-entry {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-xs);
+            font-size: 12px;
+            line-height: 1.4;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .log-entry.current {
+            background: rgba(255, 191, 0, 0.1);
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+
+        .timestamp {
+            color: rgba(255, 191, 0, 0.7);
+            font-size: 10px;
+            white-space: nowrap;
+            min-width: 140px;
+        }
+
+        .log-text {
+            color: var(--amber-accent);
+            flex: 1;
+        }
+
+        .log-entry:nth-child(odd) .log-text {
+            color: rgba(255, 191, 0, 0.9);
+        }
+
+        .log-entry:nth-child(even) .log-text {
+            color: rgba(255, 191, 0, 0.8);
+        }
+    </style>
+</body>
+</html>

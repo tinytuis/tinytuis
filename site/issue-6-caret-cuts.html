@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinyTUIs #6: Caret Cuts - Short-form software stories for the terminal</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/issue.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>$</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="/" class="logo">TinyTUIs</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/#catalog">← Back to Catalog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Issue Content -->
+    <main class="issue-main">
+        <div class="issue-container">
+            <!-- Issue Header -->
+            <header class="issue-header">
+                <div class="issue-number">TinyTUIs #6</div>
+                <h1 class="issue-title">Caret Cuts</h1>
+                <div class="issue-subtitle">Single-page experiments. Each one short enough to feel disposable, sharp enough to leave an impression</div>
+                <div class="issue-meta">
+                    <span class="series-tag">One-Shots</span>
+                    <span class="issue-date">Published: Winter 2025</span>
+                </div>
+            </header>
+
+            <!-- Two Column Layout -->
+            <div class="issue-content">
+                <!-- Left Column: Demo -->
+                <div class="demo-section">
+                    <div class="terminal-demo">
+                        <div class="terminal-header">
+                            <span class="terminal-title">$ python issues/caret-cuts/main.py</span>
+                            <div class="terminal-controls">
+                                <span class="control minimize">─</span>
+                                <span class="control maximize">□</span>
+                                <span class="control close">×</span>
+                            </div>
+                        </div>
+                        <div class="terminal-body caret-demo">
+                            <div class="experiment-container">
+                                <div class="experiment active" id="exp-1">
+                                    <div class="experiment-title">// unravel.js</div>
+                                    <div class="unravel-text">
+                                        <span class="word">beautiful</span>
+                                        <div class="unraveling">
+                                            b e a u t i f u l
+                                            <br>b e a u t i f u
+                                            <br>b e a u t i f
+                                            <br>b e a u t i
+                                            <br>b e a u t
+                                            <br>b e a u
+                                            <br>b e a
+                                            <br>b e
+                                            <br>b
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="experiment" id="exp-2">
+                                    <div class="experiment-title">// constellation.py</div>
+                                    <div class="constellation">
+                                        <div class="stars">
+                                            ★ · · ◆ · ★ · ·
+                                            <br>· ◆ · · ★ · · ◆
+                                            <br>· · ★ · · ◆ · ·
+                                            <br>◆ · · ★ · · ◆ ·
+                                            <br>· ★ · · ◆ · · ★
+                                        </div>
+                                        <div class="constellation-hint">press any key to redraw</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="experiment" id="exp-3">
+                                    <div class="experiment-title">// overheard.txt</div>
+                                    <div class="chat-scroll">
+                                        <div class="chat-line">stranger_42: anyone else feel like</div>
+                                        <div class="chat-line">midnight_coder: the future is written in</div>
+                                        <div class="chat-line">ghost_writer: fragments of conversations</div>
+                                        <div class="chat-line">digital_nomad: we never finished</div>
+                                        <div class="chat-line">void_walker: but somehow understand</div>
+                                        <div class="chat-line">echo_chamber: perfectly</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="experiment-nav">
+                                <span class="nav-hint">space: next experiment</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-controls">
+                        <div class="control-group">
+                            <span class="key">space</span> next experiment
+                        </div>
+                        <div class="control-group">
+                            <span class="key">r</span> random experiment
+                        </div>
+                        <div class="control-group">
+                            <span class="key">s</span> save current
+                        </div>
+                        <div class="control-group">
+                            <span class="key">q</span> quit
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Description -->
+                <div class="description-section">
+                    <div class="description-content">
+                        <section class="what-it-is">
+                            <h2>What it is</h2>
+                            <p>Single-page experiments. A word that unravels across the screen. Constellations that redraw with each keypress. A scrolling overheard chat. Each one short enough to feel disposable, sharp enough to leave an impression.</p>
+                            
+                            <p>Caret Cuts is a collection of micro-programs—terminal haikus, digital sketches, computational doodles. Each experiment explores a single idea, executed quickly and discarded just as fast.</p>
+                        </section>
+
+                        <section class="run-it">
+                            <h2>Run it</h2>
+                            <div class="code-block">
+                                <div class="code-header">Terminal</div>
+                                <pre><code>$ git clone https://github.com/tinytuis/tinytuis.git
+$ cd tinytuis
+$ python issues/caret-cuts/main.py</code></pre>
+                            </div>
+                            <p class="requirements">Requires Python 3.7+ and the <code>blessed</code> library.</p>
+                        </section>
+
+                        <section class="notes">
+                            <h2>Notes</h2>
+                            <p>Inspired by the sketch pad, the notebook margin, the quick prototype. What happens when you treat code like a disposable medium? When programs become as ephemeral as thoughts?</p>
+                            
+                            <p>Each experiment is designed to be written in under an hour, experienced in under a minute. They're meant to be rough, immediate, and surprising—like finding a crumpled note with a perfect line of poetry.</p>
+                            
+                            <p>The collection includes text effects, generative patterns, interactive poems, data visualizations, and abstract animations. All rendered in the humble terminal, all designed to spark a moment of wonder.</p>
+                        </section>
+
+                        <section class="technical-details">
+                            <h2>Technical Details</h2>
+                            <div class="tech-grid">
+                                <div class="tech-item">
+                                    <strong>Language:</strong> Python 3.7+
+                                </div>
+                                <div class="tech-item">
+                                    <strong>Dependencies:</strong> blessed, threading
+                                </div>
+                                <div class="tech-item">
+                                    <strong>Theme:</strong> Matrix green (terminal classic)
+                                </div>
+                                <div class="tech-item">
+                                    <strong>Input:</strong> Space, 'r' random, 's' save, 'q' to quit
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="issue-nav">
+                <div class="nav-item prev">
+                    <a href="issue-5-amber-light.html">
+                        <span>← Previous Issue</span>
+                        <small>Amber Light</small>
+                    </a>
+                </div>
+                <div class="nav-item catalog">
+                    <a href="/#catalog">
+                        <span>View All Issues</span>
+                        <small>Catalog</small>
+                    </a>
+                </div>
+                <div class="nav-item next">
+                    <a href="issue-1-winter-hush.html">
+                        <span>Next Issue →</span>
+                        <small>Winter Hush</small>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 TinyTUIs • Monospace meets zine culture</p>
+        </div>
+    </footer>
+
+    <script>
+        // Experiment cycling
+        let currentExperiment = 0;
+        const experiments = document.querySelectorAll('.experiment');
+        
+        function showExperiment(index) {
+            experiments.forEach((exp, i) => {
+                exp.classList.toggle('active', i === index);
+            });
+        }
+        
+        function nextExperiment() {
+            currentExperiment = (currentExperiment + 1) % experiments.length;
+            showExperiment(currentExperiment);
+        }
+        
+        // Auto-cycle experiments
+        setInterval(nextExperiment, 4000);
+        
+        // Unravel animation
+        function animateUnravel() {
+            const unravelText = document.querySelector('.unravel-text');
+            const word = unravelText.querySelector('.word');
+            const unraveling = unravelText.querySelector('.unraveling');
+            
+            setInterval(() => {
+                word.style.opacity = word.style.opacity === '0' ? '1' : '0';
+                unraveling.style.opacity = unraveling.style.opacity === '1' ? '0' : '1';
+            }, 3000);
+        }
+        
+        // Constellation redraw
+        function animateConstellation() {
+            const stars = document.querySelector('.stars');
+            const symbols = ['★', '◆', '·'];
+            
+            function redrawConstellation() {
+                const lines = stars.innerHTML.split('<br>');
+                const newLines = lines.map(line => {
+                    return line.split(' ').map(() => {
+                        return symbols[Math.floor(Math.random() * symbols.length)];
+                    }).join(' ');
+                });
+                stars.innerHTML = newLines.join('<br>');
+            }
+            
+            setInterval(redrawConstellation, 5000);
+        }
+        
+        // Chat scroll
+        function animateChat() {
+            const chatLines = document.querySelectorAll('.chat-line');
+            let currentLine = 0;
+            
+            function highlightNextLine() {
+                chatLines.forEach((line, index) => {
+                    line.style.opacity = index === currentLine ? '1' : '0.5';
+                });
+                currentLine = (currentLine + 1) % chatLines.length;
+            }
+            
+            setInterval(highlightNextLine, 1500);
+        }
+        
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            animateUnravel();
+            animateConstellation();
+            animateChat();
+        });
+    </script>
+
+    <style>
+        .caret-demo {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: var(--green-accent);
+            padding: var(--space-md);
+            min-height: 350px;
+            font-family: var(--font-mono);
+            position: relative;
+        }
+
+        .experiment-container {
+            height: 280px;
+            position: relative;
+        }
+
+        .experiment {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .experiment.active {
+            opacity: 1;
+        }
+
+        .experiment-title {
+            color: var(--gray-light);
+            font-size: 11px;
+            margin-bottom: var(--space-sm);
+            font-style: italic;
+        }
+
+        .unravel-text {
+            text-align: center;
+            padding-top: var(--space-lg);
+        }
+
+        .word {
+            font-size: 18px;
+            color: var(--green-accent);
+            display: block;
+            margin-bottom: var(--space-sm);
+            transition: opacity 0.5s ease;
+        }
+
+        .unraveling {
+            font-size: 12px;
+            color: var(--gray-light);
+            line-height: 1.2;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .constellation {
+            text-align: center;
+            padding-top: var(--space-md);
+        }
+
+        .stars {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--green-accent);
+            margin-bottom: var(--space-sm);
+        }
+
+        .constellation-hint {
+            font-size: 10px;
+            color: var(--gray-medium);
+            font-style: italic;
+        }
+
+        .chat-scroll {
+            padding-top: var(--space-sm);
+        }
+
+        .chat-line {
+            font-size: 12px;
+            padding: 2px 0;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+            color: var(--green-accent);
+        }
+
+        .experiment-nav {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-size: 10px;
+            color: var(--gray-medium);
+            font-style: italic;
+        }
+    </style>
+</body>
+</html>

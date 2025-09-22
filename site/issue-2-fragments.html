@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinyTUIs #2: Fragments.txt - Short-form software stories for the terminal</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/issue.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>$</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="/" class="logo">TinyTUIs</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/#catalog">← Back to Catalog</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+    </header>
+
+    <!-- Issue Content -->
+    <main class="issue-main">
+        <div class="issue-content">
+            <!-- Issue Header -->
+            <header class="issue-header">
+                <div class="issue-number">TinyTUIs #2</div>
+                <h1 class="issue-title">Fragments.txt</h1>
+                <div class="issue-subtitle">A scrolling pile of half-finished thoughts and stray notes</div>
+                <div class="issue-meta">
+                    <span class="series-tag">Text Collages</span>
+                    <span class="issue-date">Published: Winter 2025</span>
+                </div>
+            </header>
+
+            <!-- Two Column Layout -->
+            <div class="issue-content">
+                <!-- Left Column: Demo -->
+                <div class="demo-section">
+                    <div class="terminal-demo">
+                        <div class="terminal-header">
+                            <span class="terminal-title">$ python issues/fragments/main.py</span>
+                            <div class="terminal-controls">
+                                <span class="control minimize">─</span>
+                                <span class="control maximize">□</span>
+                                <span class="control close">×</span>
+                            </div>
+                        </div>
+                        <div class="terminal-body fragments-demo">
+                            <div class="fragment-stream">
+                                <div class="fragment">remember to call mom</div>
+                                <div class="fragment">the way light hits water at 3pm</div>
+                                <div class="fragment">TODO: fix that thing</div>
+                                <div class="fragment">dreams feel more real lately</div>
+                                <div class="fragment">grocery list: milk, bread, hope</div>
+                                <div class="fragment">why do we say "after dark"?</div>
+                                <div class="fragment">half-written email to sarah</div>
+                                <div class="fragment">the sound of rain on leaves</div>
+                                <div class="fragment">note: check that reference</div>
+                                <div class="fragment">coffee tastes different on mondays</div>
+                            </div>
+                            <div class="fragment-input">
+                                <span class="prompt">catch> </span>
+                                <span class="cursor-blink">█</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-controls">
+                        <div class="control-group">
+                            <span class="key">↑</span> <span class="key">↓</span> Scroll through fragments
+                        </div>
+                        <div class="control-group">
+                            <span class="key">space</span> Catch fragment
+                        </div>
+                        <div class="control-group">
+                            <span class="key">enter</span> Stitch together
+                        </div>
+                        <div class="control-group">
+                            <span class="key">q</span> Quit the experience
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Description -->
+                <div class="description-section">
+                    <div class="description-content">
+                    <section class="what-it-is">
+                        <h2>What it is</h2>
+                        <p>A collage of text inside a black window. Half-finished thoughts, stray notes, and forgotten fragments drift by in an endless stream. You can catch them, let them pass, or stitch them together into something new.</p>
+                        
+                        <p>Each fragment carries the weight of an incomplete thought—the grocery list that became poetry, the TODO that became philosophy, the random observation that became the seed of something larger.</p>
+                    </section>
+
+                    <section class="run-it">
+                        <h2>Run it</h2>
+                        <div class="code-block">
+                            <div class="code-header">Terminal</div>
+                            <pre><code>$ git clone https://github.com/tinytuis/tinytuis.git
+$ cd tinytuis
+$ python issues/fragments/main.py</code></pre>
+                        </div>
+                        <p class="requirements">Requires Python 3.7+ and the <code>blessed</code> library.</p>
+                    </section>
+
+                    <section class="notes">
+                        <h2>Notes</h2>
+                        <p>Inspired by the way we accumulate digital detritus—the notes app full of one-liners, the desktop scattered with text files, the browser tabs we never close. What if we could catch these fragments as they drift by?</p>
+                        
+                        <p>The program reads from a collection of text fragments, but you can feed it your own notes, tweets, or any text file. Watch your own thoughts drift by, catch the ones that resonate, let the rest disappear into the digital ether.</p>
+                        
+                        <p>Part text editor, part meditation on digital memory. A reminder that not everything needs to be finished to be meaningful.</p>
+                    </section>
+
+                    <section class="technical-details">
+                        <h2>Technical Details</h2>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <strong>Language:</strong> Python 3.7+
+                            </div>
+                            <div class="tech-item">
+                                <strong>Dependencies:</strong> blessed, threading
+                            </div>
+                            <div class="tech-item">
+                                <strong>Theme:</strong> Nebula (purples and blues)
+                            </div>
+                            <div class="tech-item">
+                                <strong>Input:</strong> Arrow keys, space, enter, 'q' to quit
+                            </div>
+                        </div>
+                    </section>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="issue-nav">
+                <div class="nav-item prev">
+                    <a href="issue-1-winter-hush.html">
+                        <span>← Previous Issue</span>
+                        <small>Winter Hush</small>
+                    </a>
+                </div>
+                <div class="nav-item catalog">
+                    <a href="/#catalog">
+                        <span>View All Issues</span>
+                        <small>Catalog</small>
+                    </a>
+                </div>
+                <div class="nav-item next">
+                    <a href="issue-3-gutter.html">
+                        <span>Next Issue →</span>
+                        <small>Gutter</small>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 TinyTUIs • Monospace meets zine culture</p>
+        </div>
+    </footer>
+
+    <script>
+        
+
+        // Fragment animation
+        function animateFragments() {
+            const fragments = document.querySelectorAll('.fragment');
+            let currentIndex = 0;
+            
+            function showNextFragment() {
+                fragments.forEach((fragment, index) => {
+                    fragment.style.opacity = index === currentIndex ? '1' : '0.3';
+                    fragment.style.transform = index === currentIndex ? 'translateY(0)' : 'translateY(10px)';
+                });
+                
+                currentIndex = (currentIndex + 1) % fragments.length;
+            }
+            
+            // Initial setup
+            fragments.forEach((fragment, index) => {
+                fragment.style.transition = 'all 0.5s ease';
+                fragment.style.opacity = index === 0 ? '1' : '0.3';
+                fragment.style.transform = index === 0 ? 'translateY(0)' : 'translateY(10px)';
+            });
+            
+            // Animate every 2 seconds
+            setInterval(showNextFragment, 2000);
+        }
+
+        // Cursor blink
+        function blinkCursor() {
+            const cursor = document.querySelector('.cursor-blink');
+            if (cursor) {
+                setInterval(() => {
+                    cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+                }, 500);
+            }
+        }
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            animateFragments();
+            blinkCursor();
+        });
+    </script>
+
+    <style>
+        .fragments-demo {
+            background: linear-gradient(135deg, #2c2c54 0%, #40407a 100%);
+            color: rgba(255, 255, 255, 0.9);
+            padding: var(--space-md);
+            min-height: 300px;
+            position: relative;
+        }
+
+        .fragment-stream {
+            height: 250px;
+            overflow: hidden;
+            margin-bottom: var(--space-md);
+        }
+
+        .fragment {
+            padding: var(--space-xs) 0;
+            font-family: var(--font-mono);
+            font-size: 13px;
+            line-height: 1.4;
+            opacity: 0.3;
+            transition: all 0.5s ease;
+            border-left: 2px solid transparent;
+            padding-left: var(--space-xs);
+        }
+
+        .fragment:hover {
+            opacity: 1;
+            border-left-color: var(--amber-accent);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .fragment-input {
+            position: absolute;
+            bottom: var(--space-md);
+            left: var(--space-md);
+            font-family: var(--font-mono);
+            font-size: 13px;
+        }
+
+        .prompt {
+            color: var(--amber-accent);
+        }
+
+        .cursor-blink {
+            color: var(--amber-accent);
+            animation: blink 1s infinite;
+        }
+    </style>
+</body>
+</html>

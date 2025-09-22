@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue #3: Gutter - TinyTUIs</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/issue.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>$</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="/" class="logo">TinyTUIs</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/#catalog">← Back to Catalog</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+    </header>
+
+    <!-- Issue Content -->
+    <main class="issue-main">
+        <div class="issue-content">
+            <!-- Issue Header -->
+            <header class="issue-header">
+                <div class="issue-number">TinyTUIs #3</div>
+                <h1 class="issue-title">Gutter</h1>
+                <div class="issue-subtitle">A comic reader built for the terminal</div>
+                <div class="issue-meta">
+                    <span class="series-tag">Sequential Art</span>
+                    <span class="issue-date">Published: Winter 2025</span>
+                </div>
+            </header>
+
+            <!-- Two Column Layout -->
+            <div class="issue-content">
+                <!-- Left Column: Demo -->
+                <div class="demo-section">
+                    <div class="terminal-demo">
+                        <div class="terminal-header">
+                            <span class="terminal-title">$ python issues/gutter/main.py</span>
+                            <div class="terminal-controls">
+                                <span class="control minimize">─</span>
+                                <span class="control maximize">□</span>
+                                <span class="control close">×</span>
+                            </div>
+                        </div>
+                        <div class="terminal-body gutter-demo">
+                            <div class="comic-page">
+                                <div class="panel-grid">
+                                    <div class="panel panel-1">
+                                        <div class="panel-border">
+                                            ┌─────────────────┐
+                                            │  "Hello?"       │
+                                            │                 │
+                                            │     o           │
+                                            │    /|\          │
+                                            │    / \          │
+                                            └─────────────────┘
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-2">
+                                        <div class="panel-border">
+                                            ┌─────────────────┐
+                                            │  "Anyone there?"│
+                                            │                 │
+                                            │     o           │
+                                            │    /|\          │
+                                            │    / \          │
+                                            └─────────────────┘
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-3">
+                                        <div class="panel-border">
+                                            ┌─────────────────┐
+                                            │  *silence*      │
+                                            │                 │
+                                            │     ...         │
+                                            │                 │
+                                            │                 │
+                                            └─────────────────┘
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="page-info">
+                                    <span class="page-number">Page 1 of 12</span>
+                                    <span class="navigation-hint">← → to turn pages</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-controls">
+                        <div class="control-group">
+                            <span class="key">←</span> <span class="key">→</span> Turn pages
+                        </div>
+                        <div class="control-group">
+                            <span class="key">space</span> Next panel
+                        </div>
+                        <div class="control-group">
+                            <span class="key">f</span> Fullscreen panel
+                        </div>
+                        <div class="control-group">
+                            <span class="key">q</span> Quit the experience
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Description -->
+                <div class="description-section">
+                    <div class="description-content">
+                    <section class="what-it-is">
+                        <h2>What it is</h2>
+                        <p>A comic reader built for the terminal. Panels appear in ASCII boxes, arrows turn the page. It feels like flipping through a photocopied mini-comic pulled from a spinner rack.</p>
+                        
+                        <p>Comics are parsed from simple text files with ASCII art and dialogue. The reader handles panel layouts, page turns, and even supports speech bubbles and sound effects rendered in monospace glory.</p>
+                    </section>
+
+                    <section class="run-it">
+                        <h2>Run it</h2>
+                        <div class="code-block">
+                            <div class="code-header">Terminal</div>
+                            <pre><code>$ git clone https://github.com/tinytuis/tinytuis.git
+$ cd tinytuis
+$ python issues/gutter/main.py</code></pre>
+                        </div>
+                        <p class="requirements">Requires Python 3.7+ and the <code>blessed</code> library.</p>
+                    </section>
+
+                    <section class="notes">
+                        <h2>Notes</h2>
+                        <p>Inspired by the DIY comic scene—zines, mini-comics, and the raw energy of photocopied art. What if comics could live in the terminal, rendered in the same monospace font as code?</p>
+                        
+                        <p>The comic format is intentionally simple: panels defined by ASCII borders, dialogue in quotes, and basic layout instructions. Anyone can write a comic in a text editor.</p>
+                        
+                        <p>Supports multi-panel layouts, splash pages, and even animated sequences. The gutter—the space between panels—becomes part of the terminal's natural grid system.</p>
+                    </section>
+
+                    <section class="technical-details">
+                        <h2>Technical Details</h2>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <strong>Language:</strong> Python 3.7+
+                            </div>
+                            <div class="tech-item">
+                                <strong>Dependencies:</strong> blessed, threading
+                            </div>
+                            <div class="tech-item">
+                                <strong>Theme:</strong> Minimal (grays and amber)
+                            </div>
+                            <div class="tech-item">
+                                <strong>Input:</strong> Arrow keys, space, 'f', 'q' to quit
+                            </div>
+                        </div>
+                    </section>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="issue-nav">
+                <div class="nav-item prev">
+                    <a href="issue-2-fragments.html">
+                        <span>← Previous Issue</span>
+                        <small>Fragments.txt</small>
+                    </a>
+                </div>
+                <div class="nav-item catalog">
+                    <a href="/#catalog">
+                        <span>View All Issues</span>
+                        <small>Catalog</small>
+                    </a>
+                </div>
+                <div class="nav-item next">
+                    <a href="issue-4-echo-chamber.html">
+                        <span>Next Issue →</span>
+                        <small>Echo Chamber</small>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 TinyTUIs • Monospace meets zine culture</p>
+        </div>
+    </footer>
+
+    <script>
+        
+
+        // Panel animation
+        function animatePanels() {
+            const panels = document.querySelectorAll('.panel');
+            let currentPanel = 0;
+            
+            function highlightPanel() {
+                panels.forEach((panel, index) => {
+                    if (index === currentPanel) {
+                        panel.style.opacity = '1';
+                        panel.style.transform = 'scale(1.02)';
+                        panel.style.borderColor = 'var(--amber-accent)';
+                    } else {
+                        panel.style.opacity = '0.7';
+                        panel.style.transform = 'scale(1)';
+                        panel.style.borderColor = 'var(--gray-medium)';
+                    }
+                });
+                
+                currentPanel = (currentPanel + 1) % panels.length;
+            }
+            
+            // Initial setup
+            panels.forEach((panel, index) => {
+                panel.style.transition = 'all 0.3s ease';
+                panel.style.border = '1px solid var(--gray-medium)';
+                panel.style.borderRadius = '4px';
+                panel.style.padding = '4px';
+            });
+            
+            // Animate every 3 seconds
+            setInterval(highlightPanel, 3000);
+        }
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            animatePanels();
+        });
+    </script>
+
+    <style>
+        .gutter-demo {
+            background: linear-gradient(135deg, #1e1e1e 0%, #3c3c3c 100%);
+            color: var(--amber-accent);
+            padding: var(--space-md);
+            min-height: 350px;
+            font-family: var(--font-mono);
+        }
+
+        .comic-page {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .panel-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: var(--space-sm);
+            flex: 1;
+            margin-bottom: var(--space-md);
+        }
+
+        .panel-3 {
+            grid-column: 1 / -1;
+        }
+
+        .panel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80px;
+        }
+
+        .panel-border {
+            font-size: 10px;
+            line-height: 1.2;
+            text-align: left;
+            white-space: pre;
+            color: var(--amber-accent);
+        }
+
+        .page-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: var(--space-sm);
+            border-top: 1px solid var(--gray-dark);
+            font-size: 11px;
+            color: var(--gray-light);
+        }
+
+        .navigation-hint {
+            font-style: italic;
+        }
+    </style>
+</body>
+</html>

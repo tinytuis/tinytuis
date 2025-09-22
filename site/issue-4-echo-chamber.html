@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinyTUIs #4: Echo Chamber - Short-form software stories for the terminal</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/issue.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>$</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="/" class="logo">TinyTUIs</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/#catalog">← Back to Catalog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Issue Content -->
+    <main class="issue-main">
+        <div class="issue-container">
+            <!-- Issue Header -->
+            <header class="issue-header">
+                <div class="issue-number">TinyTUIs #4</div>
+                <h1 class="issue-title">Echo Chamber</h1>
+                <div class="issue-subtitle">Type a word. Watch it return to you bent, reversed, or scattered</div>
+                <div class="issue-meta">
+                    <span class="series-tag">Language Games</span>
+                    <span class="issue-date">Published: Winter 2025</span>
+                </div>
+            </header>
+
+            <!-- Two Column Layout -->
+            <div class="issue-content">
+                <!-- Left Column: Demo -->
+                <div class="demo-section">
+                    <div class="terminal-demo">
+                        <div class="terminal-header">
+                            <span class="terminal-title">$ python issues/echo-chamber/main.py</span>
+                            <div class="terminal-controls">
+                                <span class="control minimize">─</span>
+                                <span class="control maximize">□</span>
+                                <span class="control close">×</span>
+                            </div>
+                        </div>
+                        <div class="terminal-body echo-demo">
+                            <div class="echo-session">
+                                <div class="input-line">
+                                    <span class="prompt">speak> </span>
+                                    <span class="user-input">hello</span>
+                                </div>
+                                <div class="echo-responses">
+                                    <div class="echo-line echo-1">olleh</div>
+                                    <div class="echo-line echo-2">h e l l o</div>
+                                    <div class="echo-line echo-3">HELLO</div>
+                                    <div class="echo-line echo-4">h...e...l...l...o</div>
+                                    <div class="echo-line echo-5">ʰᵉˡˡᵒ</div>
+                                </div>
+                                
+                                <div class="input-line">
+                                    <span class="prompt">speak> </span>
+                                    <span class="user-input">silence</span>
+                                </div>
+                                <div class="echo-responses">
+                                    <div class="echo-line echo-1">ecnelis</div>
+                                    <div class="echo-line echo-2">s i l e n c e</div>
+                                    <div class="echo-line echo-3">silence?</div>
+                                    <div class="echo-line echo-4">...silence...</div>
+                                    <div class="echo-line echo-5">ˢⁱˡᵉⁿᶜᵉ</div>
+                                </div>
+                                
+                                <div class="current-input">
+                                    <span class="prompt">speak> </span>
+                                    <span class="cursor-blink">█</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-controls">
+                        <div class="control-group">
+                            <span class="key">type</span> any word
+                        </div>
+                        <div class="control-group">
+                            <span class="key">enter</span> send to echo
+                        </div>
+                        <div class="control-group">
+                            <span class="key">tab</span> change echo mode
+                        </div>
+                        <div class="control-group">
+                            <span class="key">q</span> quit
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Description -->
+                <div class="description-section">
+                    <div class="description-content">
+                        <section class="what-it-is">
+                            <h2>What it is</h2>
+                            <p>A dialogue with a machine that can only mirror and distort what you say. Type a word, watch it return to you bent, reversed, or scattered across the screen in different forms.</p>
+                            
+                            <p>Each echo transforms your input through different filters—reversal, spacing, case changes, decay effects, and typographic distortions. The machine becomes a funhouse mirror for language.</p>
+                        </section>
+
+                        <section class="run-it">
+                            <h2>Run it</h2>
+                            <div class="code-block">
+                                <div class="code-header">Terminal</div>
+                                <pre><code>$ git clone https://github.com/tinytuis/tinytuis.git
+$ cd tinytuis
+$ python issues/echo-chamber/main.py</code></pre>
+                            </div>
+                            <p class="requirements">Requires Python 3.7+ and the <code>blessed</code> library.</p>
+                        </section>
+
+                        <section class="notes">
+                            <h2>Notes</h2>
+                            <p>Inspired by the way we talk to machines—and how they talk back. What happens when the only response is distortion? When communication becomes a game of telephone with yourself?</p>
+                            
+                            <p>The program includes multiple echo modes: reverse, scatter, decay, whisper, shout, and stutter. Each mode applies different transformations to create a unique voice for the machine.</p>
+                            
+                            <p>Try typing poetry, questions, or single words. Watch how different inputs create different patterns of distortion. The echo chamber becomes a collaborator in creating new forms of text.</p>
+                        </section>
+
+                        <section class="technical-details">
+                            <h2>Technical Details</h2>
+                            <div class="tech-grid">
+                                <div class="tech-item">
+                                    <strong>Language:</strong> Python 3.7+
+                                </div>
+                                <div class="tech-item">
+                                    <strong>Dependencies:</strong> blessed, threading
+                                </div>
+                                <div class="tech-item">
+                                    <strong>Theme:</strong> Deep blue (terminal blues)
+                                </div>
+                                <div class="tech-item">
+                                    <strong>Input:</strong> Text input, tab to change modes, 'q' to quit
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="issue-nav">
+                <div class="nav-item prev">
+                    <a href="issue-3-gutter.html">
+                        <span>← Previous Issue</span>
+                        <small>Gutter</small>
+                    </a>
+                </div>
+                <div class="nav-item catalog">
+                    <a href="/#catalog">
+                        <span>View All Issues</span>
+                        <small>Catalog</small>
+                    </a>
+                </div>
+                <div class="nav-item next">
+                    <a href="issue-5-amber-light.html">
+                        <span>Next Issue →</span>
+                        <small>Amber Light</small>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 TinyTUIs • Monospace meets zine culture</p>
+        </div>
+    </footer>
+
+    <script>
+        // Echo animation
+        function animateEchoes() {
+            const echoLines = document.querySelectorAll('.echo-line');
+            
+            function animateEchoSet(startIndex) {
+                const echoSet = Array.from(echoLines).slice(startIndex, startIndex + 5);
+                
+                echoSet.forEach((line, index) => {
+                    setTimeout(() => {
+                        line.style.opacity = '1';
+                        line.style.transform = 'translateX(0)';
+                    }, index * 200);
+                });
+                
+                setTimeout(() => {
+                    echoSet.forEach(line => {
+                        line.style.opacity = '0.3';
+                    });
+                }, 2000);
+            }
+            
+            // Initial setup
+            echoLines.forEach(line => {
+                line.style.transition = 'all 0.3s ease';
+                line.style.opacity = '0.3';
+                line.style.transform = 'translateX(10px)';
+            });
+            
+            // Animate first set immediately
+            animateEchoSet(0);
+            
+            // Animate second set after delay
+            setTimeout(() => animateEchoSet(5), 3000);
+            
+            // Repeat the cycle
+            setInterval(() => {
+                animateEchoSet(0);
+                setTimeout(() => animateEchoSet(5), 3000);
+            }, 8000);
+        }
+
+        // Cursor blink
+        function blinkCursor() {
+            const cursor = document.querySelector('.cursor-blink');
+            if (cursor) {
+                setInterval(() => {
+                    cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+                }, 500);
+            }
+        }
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            animateEchoes();
+            blinkCursor();
+        });
+    </script>
+
+    <style>
+        .echo-demo {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+            color: var(--blue-accent);
+            padding: var(--space-md);
+            min-height: 350px;
+            font-family: var(--font-mono);
+        }
+
+        .echo-session {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+
+        .input-line {
+            color: var(--terminal-white);
+            margin-bottom: var(--space-xs);
+        }
+
+        .prompt {
+            color: var(--blue-accent);
+        }
+
+        .user-input {
+            color: var(--terminal-white);
+        }
+
+        .echo-responses {
+            margin-left: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .echo-line {
+            padding: 2px 0;
+            font-size: 13px;
+            opacity: 0.3;
+            transition: all 0.3s ease;
+        }
+
+        .echo-1 { color: var(--blue-accent); }
+        .echo-2 { color: var(--green-accent); letter-spacing: 2px; }
+        .echo-3 { color: var(--amber-accent); font-weight: bold; }
+        .echo-4 { color: var(--gray-light); letter-spacing: 3px; }
+        .echo-5 { color: var(--blue-accent); font-size: 11px; }
+
+        .current-input {
+            margin-top: auto;
+            color: var(--terminal-white);
+        }
+
+        .cursor-blink {
+            color: var(--blue-accent);
+            animation: blink 1s infinite;
+        }
+    </style>
+</body>
+</html>

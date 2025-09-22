@@ -3,267 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tiny TUIs - Beautiful text for the command line age</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        neutral: {
-                            50: '#fafafa',
-                            100: '#f5f5f5',
-                            200: '#e5e5e5',
-                            300: '#d4d4d4',
-                            400: '#a3a3a3',
-                            500: '#737373',
-                            600: '#525252',
-                            700: '#404040',
-                            800: '#262626',
-                            900: '#171717',
-                            950: '#0a0a0a',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <title>TinyTUIs - Short-form software for the terminal</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>$</text></svg>">
 </head>
-<body class="min-h-screen bg-white text-neutral-900">
-    <!-- Navigation -->
-    <div class="sticky top-0 z-50 border-b border-neutral-200 bg-white/80 backdrop-blur">
-        <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-3 sm:px-8 md:px-10">
-            <div class="flex items-center gap-3">
-                <div class="grid h-6 w-6 place-items-center rounded-md border border-neutral-900 text-[10px] font-semibold">
-                    tt
-                </div>
-                <span class="font-medium tracking-tight">Tiny TUIs</span>
-            </div>
-            <div class="hidden gap-6 text-sm sm:flex">
-                <a href="#typesetter" class="hover:underline">Typesetter</a>
-                <a href="#specimens" class="hover:underline">Specimens</a>
-                <a href="#principles" class="hover:underline">Principles</a>
-                <a href="#about" class="hover:underline">About</a>
-            </div>
-            <button class="inline-flex items-center justify-center rounded-md text-sm font-medium border border-gray-200 bg-white hover:bg-gray-100 h-8 gap-1 px-2 text-xs">
-                Try a TUI
-                <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path d="m9 18 6-6-6-6"/>
-                </svg>
-            </button>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="/" class="logo">TinyTUIs</a>
+            <span class="header-tagline">Short-form software stories for the terminal</span>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#catalog">Catalog</a></li>
+                </ul>
+            </nav>
         </div>
-    </div>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="relative isolate border-b border-neutral-200 overflow-hidden">
-        <div class="relative mx-auto max-w-6xl px-6 pt-16 sm:px-8 md:px-10 lg:pt-24">
-            <div class="mb-10 flex items-center gap-3 text-xs uppercase tracking-widest text-neutral-500">
-                <span class="h-[1px] w-8 bg-neutral-300"></span>
-                Tiny TUIs · A study in beautiful computer-made text
+
+    <!-- Catalog -->
+    <section class="catalog" id="catalog">
+        <div class="catalog-content">
+            <div class="catalog-header">
+                <h2 class="catalog-title">Fall 2025 Edition</h2>
+                <p class="catalog-subtitle">Six programs, six issues</p>
             </div>
-            <h1 class="text-4xl font-semibold leading-tight tracking-tight sm:text-6xl">
-                Beautiful text for the command line age.
-            </h1>
-            <p class="mt-5 max-w-2xl text-neutral-600">
-                Tiny terminal interfaces, specimens, and patterns that treat text as craft. Variable
-                weights, careful spacing, ligatures, and bitmap charm—applied to developer tools.
-            </p>
-            <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div class="rounded-lg border border-neutral-200 bg-white shadow-sm">
-                    <div class="p-4">
-                        <div class="font-mono text-sm leading-6 tracking-tight text-neutral-800">
-                            <span class="opacity-40">$ </span>
-                            Text is the original interface.
-                        </div>
+
+            <div class="issues-grid">
+                <!-- Issue #1: Winter Hush -->
+                <article class="issue-card" onclick="window.location.href='issue-1-winter-hush.html'">
+                    <div class="issue-number">TinyTUIs #1</div>
+                    <h3 class="issue-title">Winter Hush</h3>
+                    <div class="issue-cover cover-winter-hush"></div>
+                    <p class="issue-description">
+                        A quiet, contemplative experience of ASCII snow drifting down the terminal. 
+                        Catch snowflakes to reveal fragments of poetic text.
+                    </p>
+                    <div class="issue-meta">
+                        <span class="series-tag">Terminal Meditations</span>
+                        <span>Interactive Poetry</span>
                     </div>
-                </div>
-                <div class="rounded-lg border border-neutral-200 bg-white shadow-sm">
-                    <div class="p-4">
-                        <div class="font-mono text-sm leading-6 tracking-tight text-neutral-800">
-                            <span class="opacity-40">$ </span>
-                            Monospace is a design material.
-                        </div>
+                </article>
+
+                <!-- Issue #2: Fragments.txt -->
+                <article class="issue-card" onclick="window.location.href='issue-2-fragments.html'">
+                    <div class="issue-number">TinyTUIs #2</div>
+                    <h3 class="issue-title">Fragments.txt</h3>
+                    <div class="issue-cover cover-fragments"></div>
+                    <p class="issue-description">
+                        A scrolling pile of half-finished thoughts and stray notes.
+                        Stitch fragments together into your own line, or let them pass by unread.
+                    </p>
+                    <div class="issue-meta">
+                        <span class="series-tag">Text Collages</span>
+                        <span>Interactive Writing</span>
                     </div>
-                </div>
-                <div class="rounded-lg border border-neutral-200 bg-white shadow-sm">
-                    <div class="p-4">
-                        <div class="font-mono text-sm leading-6 tracking-tight text-neutral-800">
-                            <span class="opacity-40">$ </span>
-                            Ligatures are tiny spells.
-                        </div>
+                </article>
+
+                <!-- Issue #3: Gutter -->
+                <article class="issue-card" onclick="window.location.href='issue-3-gutter.html'">
+                    <div class="issue-number">TinyTUIs #3</div>
+                    <h3 class="issue-title">Gutter</h3>
+                    <div class="issue-cover cover-gutter"></div>
+                    <p class="issue-description">
+                        A comic reader built for the terminal. Panels appear in ASCII boxes.
+                        Arrows turn the page. Feels like flipping through a photocopied mini-comic.
+                    </p>
+                    <div class="issue-meta">
+                        <span class="series-tag">Sequential Art</span>
+                        <span>Terminal Comics</span>
                     </div>
-                </div>
-                <div class="rounded-lg border border-neutral-200 bg-white shadow-sm">
-                    <div class="p-4">
-                        <div class="font-mono text-sm leading-6 tracking-tight text-neutral-800">
-                            <span class="opacity-40">$ </span>
-                            Bitmaps can be beautiful.
-                        </div>
+                </article>
+
+                <!-- Issue #4: Echo Chamber -->
+                <article class="issue-card" onclick="window.location.href='issue-4-echo-chamber.html'">
+                    <div class="issue-number">TinyTUIs #4</div>
+                    <h3 class="issue-title">Echo Chamber</h3>
+                    <div class="issue-cover cover-echo-chamber"></div>
+                    <p class="issue-description">
+                        Type a word. Watch it return to you bent, reversed, or scattered.
+                        A dialogue with a machine that can only mirror and distort what you say.
+                    </p>
+                    <div class="issue-meta">
+                        <span class="series-tag">Language Games</span>
+                        <span>Interactive Poetry</span>
                     </div>
-                </div>
+                </article>
+
+                <!-- Issue #5: Amber Light -->
+                <article class="issue-card" onclick="window.location.href='issue-5-amber-light.html'">
+                    <div class="issue-number">TinyTUIs #5</div>
+                    <h3 class="issue-title">Amber Light</h3>
+                    <div class="issue-cover cover-amber-light"></div>
+                    <p class="issue-description">
+                        A retro terminal glows amber. Logs appear like fragments of a lost diary,
+                        part machine, part memory. The screen hums with the feeling of old hardware.
+                    </p>
+                    <div class="issue-meta">
+                        <span class="series-tag">Terminal Nostalgia</span>
+                        <span>Digital Archaeology</span>
+                    </div>
+                </article>
+
+                <!-- Issue #6: Caret Cuts -->
+                <article class="issue-card" onclick="window.location.href='issue-6-caret-cuts.html'">
+                    <div class="issue-number">TinyTUIs #6</div>
+                    <h3 class="issue-title">Caret Cuts</h3>
+                    <div class="issue-cover cover-caret-cuts"></div>
+                    <p class="issue-description">
+                        Single-page experiments. A word that unravels across the screen.
+                        Constellations that redraw with each keypress. Each one short enough to feel disposable.
+                    </p>
+                    <div class="issue-meta">
+                        <span class="series-tag">One-Shots</span>
+                        <span>Experimental Forms</span>
+                    </div>
+                </article>
             </div>
-            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white"></div>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <main class="mx-auto max-w-6xl px-6 sm:px-8 md:px-10">
-        <!-- Intro Copy -->
-        <section class="py-12">
-            <div class="grid grid-cols-1 items-start gap-8 md:grid-cols-3">
-                <div class="md:col-span-2">
-                    <p class="text-lg leading-relaxed text-neutral-700">
-                        Computer-made text can be exquisite. Tiny TUIs explores the typographic surface of
-                        terminals—how spacing, weight, metrics, and rhythm shape the way developer tools feel. The
-                        project is split into <span class="font-medium">experiments</span> (little apps),
-                        <span class="font-medium"> patterns</span> (reusable UI bits), and a small
-                        <span class="font-medium"> library</span> that packages what we learn.
-                    </p>
-                </div>
-                <div class="rounded-xl border border-neutral-200 p-4 text-sm text-neutral-600">
-                    <div class="mb-2 flex items-center gap-2 font-mono">
-                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="m9 12 2 2 4-4"/>
-                        </svg>
-                        Typo note
-                    </div>
-                    <p>
-                        The site uses system UI fonts and monospaced stacks by default, but each specimen exposes
-                        OpenType-like controls so you can feel how small adjustments change legibility and mood.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Showcase -->
-        <section class="my-16">
-            <div class="mb-6 flex items-center justify-between">
-                <h2 class="text-xl font-semibold tracking-tight">Showcase</h2>
-                <div class="text-sm text-neutral-600">from /experiments and /patterns</div>
-            </div>
-            <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-                <div class="rounded-lg border border-neutral-200 bg-white shadow-sm">
-                    <div class="p-6">
-                        <h3 class="text-base font-semibold">Jotpad</h3>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <div class="rounded-lg border border-dashed border-neutral-300 bg-neutral-50 p-3 font-mono text-[13px] leading-6 text-neutral-800">
-                            $ jotpad — A tiny scratch buffer with perfect keys
-                        </div>
-                        <button class="mt-3 inline-flex items-center justify-center rounded-md text-sm font-medium hover:bg-gray-100 hover:text-gray-900 h-8 gap-1 px-2 text-xs">
-                            Open demo
-                            <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path d="m9 18 6-6-6-6"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="rounded-lg border border-neutral-200 bg-white shadow-sm">
-                    <div class="p-6">
-                        <h3 class="text-base font-semibold">Scopes</h3>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <div class="rounded-lg border border-dashed border-neutral-300 bg-neutral-50 p-3 font-mono text-[13px] leading-6 text-neutral-800">
-                            $ scopes — Greppable index with tabular rhythm
-                        </div>
-                        <button class="mt-3 inline-flex items-center justify-center rounded-md text-sm font-medium hover:bg-gray-100 hover:text-gray-900 h-8 gap-1 px-2 text-xs">
-                            Open demo
-                            <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path d="m9 18 6-6-6-6"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="rounded-lg border border-neutral-200 bg-white shadow-sm">
-                    <div class="p-6">
-                        <h3 class="text-base font-semibold">Runner</h3>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <div class="rounded-lg border border-dashed border-neutral-300 bg-neutral-50 p-3 font-mono text-[13px] leading-6 text-neutral-800">
-                            $ runner — Command palette tuned for terminals
-                        </div>
-                        <button class="mt-3 inline-flex items-center justify-center rounded-md text-sm font-medium hover:bg-gray-100 hover:text-gray-900 h-8 gap-1 px-2 text-xs">
-                            Open demo
-                            <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path d="m9 18 6-6-6-6"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Principles -->
-        <section id="principles" class="my-20">
-            <h2 class="mb-6 text-xl font-semibold tracking-tight">Principles</h2>
-            <ol class="space-y-3 text-neutral-700">
-                <li><b>Do the least, but do it well.</b> Small programs. Great type.</li>
-                <li><b>Make complexity invisible.</b> Let rhythm and metrics carry the load.</li>
-                <li><b>Actions first, details later.</b> Text that moves you forward.</li>
-                <li><b>Transparency should be useful.</b> Show what matters; hide the rest.</li>
-            </ol>
-        </section>
-
-        <!-- CTA -->
-        <section class="my-20 rounded-2xl border border-neutral-200 p-6">
-            <div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:items-center">
-                <div class="md:col-span-2">
-                    <h3 class="text-lg font-medium">Start with an experiment.</h3>
-                    <p class="mt-1 text-neutral-600">Clone a tiny app, tweak the text, feel the difference. Letterforms first, features second.</p>
-                </div>
-                <div class="flex gap-2 md:justify-end">
-                    <button class="inline-flex items-center justify-center rounded-md text-sm font-medium bg-gray-900 text-gray-50 hover:bg-gray-900/90 h-10 px-4 py-2 gap-1">New TUI</button>
-                    <button class="inline-flex items-center justify-center rounded-md text-sm font-medium border border-gray-200 bg-white hover:bg-gray-100 hover:text-gray-900 h-10 px-4 py-2 gap-1">
-                        Docs 
-                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path d="m9 18 6-6-6-6"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Type Art -->
-        <section class="my-24">
-            <div class="rounded-2xl border border-neutral-200 p-6">
-                <div class="mb-3 text-xs uppercase tracking-widest text-neutral-500">Type Art</div>
-                <div class="overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50 p-6">
-                    <pre class="whitespace-pre-wrap font-mono text-[15px] leading-7 text-neutral-900">/\  /\  /\   /\  /\  /\    characters, cadence, clarity
-||\\ ||\\ ||\\   ||\\ ||\\ ||\\   monospaced materials
-|| \\|| \\|| \\  || \\|| \\|| \\  bitmap bones
-||  
-||  
-||    rhythm & reason → TUIs</pre>
-                </div>
-            </div>
-        </section>
-    </main>
-
     <!-- Footer -->
-    <footer id="about" class="mt-24 border-t border-neutral-200 py-10">
-        <div class="mx-auto max-w-6xl px-6 sm:px-8 md:px-10">
-            <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
-                <div>
-                    <div class="mb-2 font-medium">Tiny TUIs</div>
-                    <div class="text-sm text-neutral-600">A collection of tiny terminal user interfaces and typographic experiments.</div>
-                </div>
-                <div>
-                    <div class="mb-2 text-sm font-medium">Structure</div>
-                    <ul class="space-y-1 text-sm text-neutral-600">
-                        <li>/experiments</li>
-                        <li>/patterns</li>
-                        <li>/docs</li>
-                        <li>/site</li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="mb-2 text-sm font-medium">Credits</div>
-                    <div class="text-sm text-neutral-600">Typesetting matters. Built with care and fewer features.</div>
-                </div>
-            </div>
-            <div class="mt-8 text-xs text-neutral-500">© 2025 Tiny TUIs</div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 TinyTUIs • Monospace meets zine culture</p>
         </div>
     </footer>
+
+    <script>
+
+        // Konami Code Easter Egg
+        let konamiCode = [];
+        const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
+        
+        document.addEventListener('keydown', function(e) {
+            konamiCode.push(e.keyCode);
+            if (konamiCode.length > konamiSequence.length) {
+                konamiCode.shift();
+            }
+            
+            if (konamiCode.length === konamiSequence.length && 
+                konamiCode.every((code, i) => code === konamiSequence[i])) {
+                // Easter egg: Matrix rain effect
+                createMatrixRain();
+            }
+        });
+
+        function createMatrixRain() {
+            const matrix = document.createElement('div');
+            matrix.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                z-index: 9999;
+                pointer-events: none;
+                font-family: var(--font-mono);
+                color: var(--green-accent);
+                overflow: hidden;
+            `;
+            
+            for (let i = 0; i < 50; i++) {
+                const drop = document.createElement('div');
+                drop.textContent = Math.random() > 0.5 ? '1' : '0';
+                drop.style.cssText = `
+                    position: absolute;
+                    left: ${Math.random() * 100}%;
+                    animation: matrix-fall ${2 + Math.random() * 3}s linear infinite;
+                    font-size: 14px;
+                `;
+                matrix.appendChild(drop);
+            }
+            
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes matrix-fall {
+                    0% { top: -20px; opacity: 1; }
+                    100% { top: 100vh; opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            document.body.appendChild(matrix);
+            
+            setTimeout(() => {
+                matrix.remove();
+                style.remove();
+            }, 5000);
+        }
+
+        
+    </script>
 </body>
 </html>

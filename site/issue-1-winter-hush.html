@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinyTUIs #1: Winter Hush - Short-form software stories for the terminal</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/issue.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>$</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="/" class="logo">TinyTUIs</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/#catalog">← Back to Catalog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Issue Content -->
+    <main class="issue-main">
+        <div class="issue-content">
+            <!-- Issue Header -->
+            <header class="issue-header">
+                <div class="issue-number">TinyTUIs #1</div>
+                <h1 class="issue-title">Winter Hush</h1>
+                <div class="issue-subtitle">A quiet, contemplative experience of ASCII snow</div>
+                <div class="issue-meta">
+                    <span class="series-tag">Interactive Poetry</span>
+                    <span class="issue-date">Published: Winter 2025</span>
+                </div>
+            </header>
+
+            <!-- Two Column Layout -->
+            <div class="issue-content">
+                <!-- Left Column: Demo -->
+                <div class="demo-section">
+                    <div class="terminal-demo">
+                        <div class="terminal-header">
+                            <span class="terminal-title">$ python issues/winter-hush/main.py</span>
+                            <div class="terminal-controls">
+                                <span class="control minimize">─</span>
+                                <span class="control maximize">□</span>
+                                <span class="control close">×</span>
+                            </div>
+                        </div>
+                        <div class="terminal-body winter-demo">
+                                <div class="snow-line">     ❄        ❅     ❄</div>
+                                <div class="snow-line">  ❅     ❄        ❅   </div>
+                                <div class="snow-line">       ❅    ❄        </div>
+                                <div class="snow-line">❄        ❅        ❄  </div>
+                                <div class="snow-line">   ❅        ❄    ❅   </div>
+                                <div class="snow-line">        ❄     ❅      </div>
+                                <div class="snow-line">  ❄    ❅        ❄    </div>
+                                <div class="snow-line">     ❅        ❄   ❅  </div>
+                                <div class="snow-line">           ^           </div>
+                                <div class="snow-line">                      </div>
+                                <div class="collected-text">fragments caught: "winter whispers..."</div>
+                        </div>
+                    </div>
+
+                    <div class="demo-controls">
+                        <div class="control-group">
+                            <span class="key">←</span> <span class="key">→</span> Move to catch snowflakes
+                        </div>
+                        <div class="control-group">
+                            <span class="key">q</span> Quit the experience
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Description -->
+                <div class="description-section">
+                    <div class="description-content">
+                    <section class="what-it-is">
+                        <h2>What it is</h2>
+                        <p>
+                            Winter Hush invites you into a peaceful terminal snowfall. Move your cursor 
+                            (represented by <code>^</code>) left and right to catch falling snowflakes. 
+                            Some snowflakes carry hidden text fragments—poetic whispers that reveal 
+                            themselves when caught.
+                        </p>
+                        <p>
+                            This is not a game with scores or levels. It's a meditative experience that 
+                            explores the quietude of winter and the joy of discovering hidden meaning 
+                            through gentle interaction.
+                        </p>
+                    </section>
+
+                    <section class="run-it">
+                        <h2>Run it</h2>
+                        <div class="code-block">
+                            <div class="code-header">Terminal</div>
+                            <pre><code>$ git clone https://github.com/tinytuis/tinytuis.git
+$ cd tinytuis
+$ python issues/winter-hush/main.py</code></pre>
+                        </div>
+                        <p class="requirements">Requires Python 3.7+ and the <code>blessed</code> library.</p>
+                    </section>
+
+                    <section class="notes">
+                        <h2>Notes</h2>
+                        <p>
+                            Inspired by the quiet beauty of winter and the way snow can make everything feel hushed and contemplative. The falling snowflakes are generated procedurally with simple physics—they drift slightly as they fall, making the animation feel more natural.
+                        </p>
+                        <p>
+                            The text fragments are hidden in about 25% of the snowflakes. When you catch one, it gets added to your collection at the bottom of the screen. There's no goal or score—just the simple pleasure of catching fragments of poetry as they drift by.
+                        </p>
+                        <p>
+                            The program uses threaded input handling so the snow keeps falling smoothly while you move the cursor. All the snowflakes and text are rendered in real-time using terminal escape codes.
+                        </p>
+                    </section>
+
+                    <section class="technical-details">
+                        <h2>Technical Details</h2>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <strong>Language:</strong> Python 3.7+
+                            </div>
+                            <div class="tech-item">
+                                <strong>Dependencies:</strong> blessed, threading
+                            </div>
+                            <div class="tech-item">
+                                <strong>Theme:</strong> Winter (ice blues and whites)
+                            </div>
+                            <div class="tech-item">
+                                <strong>Input:</strong> Arrow keys, 'q' to quit
+                            </div>
+                        </div>
+                    </section>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="issue-nav">
+                <div class="nav-item prev disabled">
+                    <span>← Previous Issue</span>
+                    <small>None</small>
+                </div>
+                <div class="nav-item catalog">
+                    <a href="/#catalog">
+                        <span>View All Issues</span>
+                        <small>Catalog</small>
+                    </a>
+                </div>
+                <div class="nav-item next">
+                    <a href="issue-2-fragments.html">
+                        <span>Next Issue →</span>
+                        <small>Fragments.txt</small>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 TinyTUIs • Monospace meets zine culture</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animate the snow demo
+        function animateSnow() {
+            const snowLines = document.querySelectorAll('.snow-line');
+            let frame = 0;
+            
+            setInterval(() => {
+                snowLines.forEach((line, index) => {
+                    if (index < snowLines.length - 2) { // Don't animate cursor or collected text
+                        const offset = Math.sin(frame * 0.1 + index * 0.5) * 2;
+                        line.style.transform = `translateX(${offset}px)`;
+                    }
+                });
+                frame++;
+            }, 200);
+        }
+
+        // Start animation when page loads
+        document.addEventListener('DOMContentLoaded', animateSnow);
+    </script>
+
+    <style>
+        /* Winter Hush personality */
+        .winter-demo {
+            background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%);
+            color: var(--blue-accent);
+            padding: var(--space-md);
+            min-height: 350px;
+            font-family: var(--font-mono);
+            position: relative;
+        }
+
+        .winter-demo::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(173, 216, 230, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(135, 206, 235, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .snow-line {
+            position: relative;
+            z-index: 1;
+            color: rgba(173, 216, 230, 0.9);
+            text-shadow: 0 0 3px rgba(173, 216, 230, 0.3);
+        }
+
+        .collected-text {
+            position: relative;
+            z-index: 1;
+            color: var(--amber-accent);
+            text-shadow: 0 0 2px rgba(255, 176, 0, 0.4);
+        }
+    </style>
+</body>
+</html>

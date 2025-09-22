@@ -1,0 +1,15 @@
+# TinyTUIs - No external dependencies required
+# All issues use only Python standard library
+
+# For development and testing (optional)
+# pytest>=7.0.0
+# black>=22.0.0
+# flake8>=4.0.0
+
+# For web catalog serving (built into Python)
+# python -m http.server
+
+# Python 3.7+ required for:
+# - dataclasses (used in issues)
+# - f-strings (used throughout)
+# - typing annotations (used in lib/tinykit.py)
